@@ -1,0 +1,106 @@
+.IRMlinputFileHidden{ 
+display: none;
+}
+.IRMlabelFile{
+border-radius: 5px;
+justify-content: space-between;
+display: flex;
+flex-direction: column;
+background-color: white;
+align-items: center;
+padding: 10px 10px 0 10px;
+}
+    .IRMlabelFile>* {
+ padding: 5px;
+        }
+.IRMlabelFile > :nth-child(1){
+height: 120px;
+width: 250px;
+border: 1px solid rgb(202, 202, 202);
+margin-bottom: 10px;
+border-radius: 8px;
+padding: 0;
+overflow: hidden;
+background-color: rgb(247, 247, 247);
+ }
+.IRMdivBtnFile{
+display: flex;
+
+
+}
+.IRMdivBtnFile> :nth-child(1){
+    cursor: pointer;
+background-color: rgb(39, 121, 214);
+color: white;
+display: flex;
+align-items: center;
+max-width: 180px;
+border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+    }
+.IRMdivBtnFile> :nth-child(2){
+    border-radius: 5px;
+margin-left: 10px;
+    background-color: rgb(39, 121, 214);
+    color: white;
+border-color:  rgb(39, 121, 214);
+cursor: pointer;
+font-size: 15px;
+font-weight: lighter;
+display: flex;
+align-items: center;
+}    
+.IRMdivBtnFile> :nth-child(1):hover{
+background-color: blue;
+border-color: blue;
+}
+
+.IRMdivBtnFile> :nth-child(2):hover{
+background-color: rgb(155, 11, 11) ;
+border-color: rgb(155, 11, 11) ;
+}
+.RMIBtnAcces{
+    border-radius: 5px;
+/* margin-left: 10px; */
+    background-color: rgb(39, 121, 214);
+    color: white;
+border-color:  rgb(39, 121, 214);
+cursor: pointer;
+padding: 2px 0 2px 0;
+}
+.RMIBtnAcces:hover{
+    background-color: blue;
+    border-color: blue;
+}
+.IRMlabelSpan2{
+cursor: pointer;
+display: flex;
+}
+.IRMdivToTextSpan{
+display: flex;
+justify-content: center;
+align-items:  center;
+color: gray;
+}
+.IRMmsgAlert{
+    padding: 2px;
+    background-color: rgb(236, 201, 201);
+    color: rgb(175, 22, 22);
+border-radius: 5px;
+text-align: center;
+margin: 0 0 8px 0;
+}
+
+ @media (max-width: 800px) {
+ .IRMdivBtnFile> :nth-child(1):hover,.IRMdivBtnFile> :nth-child(2):hover{
+ background-color: rgb(39, 121, 214);
+ border-color:rgb(39, 121, 214);
+    } 
+.RMIBtnAcces:hover{
+    background-color: rgb(39, 121, 214);
+    border-color:rgb(39, 121, 214);   
+}
+    
+    }
+    

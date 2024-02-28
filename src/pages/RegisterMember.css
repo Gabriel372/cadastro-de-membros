@@ -1,0 +1,81 @@
+.RMbgGray{
+    background-color: rgb(227, 226, 226);
+}
+.RMContainer{
+min-height: 100vh;
+   margin: auto;
+    padding: 0 10px 10px 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    }     
+    .RMSquare{
+    border: 1px solid rgb(194, 193, 193);    
+    flex-direction: column;
+    border-radius: 8px;
+    background-color: white;
+overflow: hidden;
+max-width: 450px;
+width: 100%;
+    }
+ .msgSuccess{
+color: black;
+font-size: 18px;    
+background-color: rgb(186, 233, 186);    
+ border-radius: 4px;
+ border: 1px solid rgb(98, 199, 98);
+margin: 0 10px 10px 10px;
+
+}
+.divRegistSuccss{
+    min-height: 26px;
+}
+.RegistMemForm{
+display: flex;
+flex-direction: column;
+width: 100%;
+padding: 10px;
+max-width: 450px;
+box-sizing: border-box;
+text-align: left;
+}
+.RegistMemForm>*{
+margin-bottom: 10px;
+font-size: 18px;
+
+}
+.RegistMemForm>input{
+border: 1px solid rgb(162, 160, 160);
+border-radius: 4px;
+}
+.RMDadRadio{
+    text-align: left;
+}   
+.RMDadRadio>*{
+margin-left: 10px;
+
+}
+.msgSuccess{
+    text-align: center;
+}
+.RMInputDate{
+    margin-bottom: 20px;
+}
+.RMInputDateFont{
+    font-size: 18px;
+}
+.RMmsgAlert{
+    padding: 5px;
+        background-color: rgb(236, 201, 201);
+        color: rgb(150, 22, 22);
+    border-radius: 5px;
+    text-align: center;
+margin-top: 0; 
+     }  
+/* @media (max-width: 800px) {
+.RMContainer{
+height: 1050px;
+    }
+} */
+ 

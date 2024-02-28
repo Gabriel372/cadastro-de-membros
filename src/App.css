@@ -1,3 +1,6 @@
+/* html {
+  scroll-behavior: smooth !important;
+} */
 .App {
   text-align: center;
 }
@@ -27,6 +30,19 @@
 .App-link {
   color: #61dafb;
 }
+ul{
+  list-style: none;
+}
+input{
+  background-color: rgb(239, 241, 243);
+}
+button{
+max-width: 100%;}
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 
 @keyframes App-logo-spin {
   from {
@@ -36,3 +52,11 @@
     transform: rotate(360deg);
   }
 }
+
+@media (max-width: 800px) { 
+  h2{
+font-size: 19px; }
+
+}
+
+

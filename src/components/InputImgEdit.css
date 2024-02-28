@@ -1,0 +1,75 @@
+
+.IRMiconPhoto{
+font-size: 25px;
+
+}
+.IRMiconTrash{
+    font-size: 20px;
+    margin-right: 2px;
+}
+.IRMspanDad{
+display: flex;
+justify-content: center;
+align-items: center;
+color: gray;
+}
+.IRMlabelSelectPhoto{
+background-color: rgb(39, 121, 214);
+border-radius: 5px;
+color: white;
+cursor: pointer;
+display: block;
+padding: 5px;
+}
+.IRMspan2{
+display: flex;
+}
+.IRMbtnRemovefoto{
+background-color: rgb(39, 121, 214);
+border-radius: 5px;
+color: white;
+border:rgb(39, 121, 214);
+padding: 5px;
+font-size: 15px;
+margin-left: 10px;
+cursor: pointer;
+display: flex;
+align-items: center;
+}
+.IRMbtnRemovefoto>:nth-child(1){
+margin-right: 3px;
+}
+
+.IRMdivBtnFoto{
+    display: flex;
+    flex-direction: row;
+}
+.IRMdivBtnFoto>:nth-child(1):hover,.IRMdivBtnFoto>:nth-child(2):hover{
+background-color: blue;
+}
+@media (max-height: 450px) {
+.IRMdivBtnFoto {
+flex-direction: column-reverse;
+height: 80px;
+justify-content: space-around;
+width: 100%;
+}
+.IRMbtnRemovefoto {
+/* padding: 10px 0 10px 0; */
+height: 40px;
+font-size: 16px;
+margin-left: 0;
+width: 100%;
+display: flex;
+justify-content: center;
+}
+.IRMspan2 {
+justify-content: center;
+}    
+.IRMiconTrash{
+    font-size: 22px;
+} 
+.IRMdivBtnFoto>:nth-child(1):hover,.IRMdivBtnFoto>:nth-child(2):hover{
+    background-color: rgb(39, 121, 214);    }
+
+}

@@ -1,0 +1,104 @@
+.RADMdivDad{
+    background-color: rgb(232, 229, 229);
+}
+.RADMcontainer{
+    max-width: 1100px;
+    height: 95vh;
+    margin: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    } 
+    .RADMsquare{
+    max-width: 350px;
+    border: 0.1px solid rgb(201, 196, 196);    
+    display: block;
+    margin:10px 10px;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: white;
+    }
+    .RADMinput{
+        width: 100%;    
+        box-sizing: border-box;
+        height: 30px;
+        font-size: 18px;
+        margin-bottom: 15px;
+        border: 0.1px solid rgb(201, 196, 196);    
+border-radius: 4px;
+        }
+        .RADMbtnAcces{
+        width: 100%;
+            height: 30px;
+        background-color: rgb(39, 121, 214);
+        border: 1px solid rgb(39, 121, 214);
+        color: white;
+        border-radius: 5px;
+        font-size: 15px;
+        align-self: center;
+        cursor: pointer;
+        margin-bottom: 0px;
+        }
+        .RADMbtnAcces:hover{
+        background-color: blue;    
+        }
+.RADMmsgSuccess{
+margin: 12px 0 0 0;
+color: green;
+font-size: 18px;    
+background-color: rgb(186, 233, 186);    
+ border-radius: 4px;
+ border: 1px solid rgb(98, 199, 98);
+}
+.RADMdadDivH2icon{
+width: 100%;
+
+
+}
+.RADMdivhH2icon{
+display: flex;
+justify-content: center;
+align-items: center;
+width: 100%;
+}
+.RADMdivhH2icon :nth-child(1){
+margin: 0 0 0 10px;
+font-size: 22px;
+width: 30px;
+position: absolute;
+left: 0;
+top: 63px;
+color: black;
+}
+.RADMdivhH2icon :nth-child(2){
+display: inline-block;
+}
+@media (max-width: 800px) {
+.RADMbtnAcces:hover{
+    background-color: rgb(39, 121, 214);
+    border: 1px solid rgb(39, 121, 214);
+}
+.RADMdivhH2icon :nth-child(1){
+top: 60px;
+}
+}
+@media (max-width: 560px) {
+    .RADMdivhH2icon :nth-child(1){
+    top: 45px;
+    }
+    }
+@media (max-width: 390px) {
+    .RADMdivhH2icon{
+justify-content: space-between;
+margin-right: 30px;
+    }
+
+    .RADMdivhH2icon :nth-child(1){
+position: static;
+width: 25px;
+height: 25px;
+    }
+
+}
+

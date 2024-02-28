@@ -1,0 +1,97 @@
+.IEMform {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* padding: 0 10px 10px 10px; */
+    box-sizing: border-box;
+    text-align: left;
+}
+.IEMform>label{
+display: flex;
+justify-content: space-between;
+margin-top: 5px;
+}
+.IEMform>label>input{
+    border-radius: 4px;
+width: 280px;
+height: 21px;
+font-size: 17px;
+border: 1px solid rgb(179, 175, 175);
+    }
+.IEMdadRadio{
+    display: flex;
+    flex-direction: row;
+    margin: 5px 0 5px 0;
+}    
+.IEMdadRadio>label{
+display: flex;
+justify-content: flex-start;
+margin-left: 10px;
+font-size: 16px;
+}   
+.IEMinputDate{
+margin-bottom: 10px;
+
+}
+
+.IEMinputDate>input{
+margin: 0  0 10px 10px;
+}
+.IEMbtnUpdt{
+    width: 100%;
+    height: 30px;
+background-color: rgb(39, 121, 214);
+border: 1px solid rgb(39, 121, 214);
+color: white;
+border-radius: 5px;
+font-size: 15px;
+align-self: center;
+cursor: pointer;
+margin-bottom: 5px;
+/* margin-bottom: 18px; */
+}
+.IEMmsgAlert{
+    padding: 2px;
+    background-color: rgb(236, 201, 201);
+    color: rgb(175, 22, 22);
+border-radius: 4px;
+text-align: center;
+margin: 5px 0 0 0;
+}
+
+
+.IEMbtnUpdt:hover{
+    background-color: blue;
+}
+@media (max-width: 800px) {
+.IEMbtnUpdt:hover {
+background-color: rgb(39, 121, 214);
+border: 1px solid rgb(39, 121, 214);
+}
+}
+@media (max-width: 450px) {
+    .IEMform>label>input{
+max-width: 180px ;  
+}
+}
+@media (max-height: 450px) {
+.IEMbtnUpdt {
+ margin-bottom: 0;
+ height: 35px;
+ margin-top: 5px;
+ }
+ .IEMbtnUpdt:hover {
+    background-color: rgb(39, 121, 214);
+    border: 1px solid rgb(39, 121, 214);
+ }
+
+
+
+
+}   
+    
+        
+
+
+
+           

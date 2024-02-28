@@ -1,0 +1,79 @@
+.MobileContainer{
+   display: none;
+   }
+   .btnMobile{
+   background-color:  rgb(0, 149, 255);
+   color: white;
+   border: none;
+   font-size: 25px;  
+   margin: 0;
+   margin-right: 15px;
+   padding: 0;
+   max-width: 30px;
+   float: right;   
+}
+.LiBtn{
+   display: flex;
+   justify-content: end;   
+   }
+   .menuCollapse{display: none;}
+
+   .menuShow{display: flex; 
+    justify-content: flex-end;
+   z-index: 1;
+   position: absolute;
+padding-right: 10px; 
+   left: 0;
+   top: 65px;
+   width: 100%;
+   box-sizing: border-box;
+   max-height: 0;
+transition: max-height 0.1s ease;
+   }
+.menuShow.menushowOpen{
+max-height: 97vh;
+height: 100%;
+transition: max-height 0.3s ease-in; 
+}
+   .MobileUl{
+       z-index: 2;
+   padding: 5px;    
+    text-align: start;   
+   display: flex;
+   flex-direction: column;
+   background-color: rgb(0, 149, 255);
+   position: relative;
+padding-bottom: 8px;
+   right: 0;
+   top: 0px;
+   margin: 0 0 0 5px;
+   border: 1px solid rgb(222, 222, 222) ;
+   border-radius: 5px;
+   max-height: 165px;
+   }
+.MobileulNone{
+display: none;
+}
+.MobileUl > a {
+text-decoration: none;
+color: white;
+display: inline;
+font-size: 20px;
+padding: 7px;
+}
+.MobileUl > a:hover {
+   background-color: rgb(7, 173, 244);
+   border-radius: 5px;
+}
+
+   li >*a{
+           display: block;
+           width: 100%;
+    }
+   
+   @media (max-width: 560px) { 
+       .MobileContainer{
+          display: block;
+          }
+   
+   }

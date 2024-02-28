@@ -1,0 +1,64 @@
+
+.ACADMcontainer{
+background-color: rgb(232, 230, 230);
+margin-top: 0;
+padding: 0 5px 0 5px;
+border-top: 1px solid rgb(232, 230, 230);
+height: 88vh;
+}
+
+/* .ACADMcontainer h2{ 
+margin: 15px 0 15px 0;
+} */
+.ACADMsquareDad{
+max-width: 1100px;
+margin: auto;
+display: flex;
+justify-content: center;    
+    }
+.ACADMsquareSon{
+/* width: 200px; */
+/* height: 200px; */
+border: 1px solid rgb(208, 205, 205);
+border-radius: 5px;
+background-color: white;
+padding: 5px;
+}
+.ACADMsquareSon>*{
+    margin:0 0 10px 0;
+}
+.ACADMbtnAcces{
+    width: 90px;
+        height: 30px;
+    background-color: rgb(39, 121, 214);
+    border: 1px solid rgb(39, 121, 214);
+    color: white;
+    border-radius: 5px;
+    font-size: 15px;
+    align-self: center;
+    cursor: pointer;
+    }
+    .ACADMbtnAcces:hover{
+        background-color: rgb(172, 11, 11) ;
+        border-color: rgb(172, 11, 11) ;
+
+    }
+.ACADMh2{
+    margin: 15px 0 15px 0;
+}
+
+@media (max-width: 800px) {
+    .ACADMcontainer{
+    height: 94vh;
+        }
+.ACADMbtnAcces:hover{
+    background-color: rgb(39, 121, 214);
+    border: 1px solid rgb(39, 121, 214);
+
+}
+
+
+
+    }
+
+    
