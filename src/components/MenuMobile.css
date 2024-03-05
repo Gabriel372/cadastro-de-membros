@@ -28,12 +28,12 @@ padding-right: 10px;
    width: 100%;
    box-sizing: border-box;
    max-height: 0;
-transition: max-height 0.1s ease;
+transition: max-height 0.2.5s ease;
    }
 .menuShow.menushowOpen{
 max-height: 97vh;
 height: 100%;
-transition: max-height 0.3s ease-in; 
+transition: max-height 0.1s ease-in; 
 }
    .MobileUl{
        z-index: 2;
@@ -49,7 +49,7 @@ padding-bottom: 8px;
    margin: 0 0 0 5px;
    border: 1px solid rgb(222, 222, 222) ;
    border-radius: 5px;
-   max-height: 165px;
+   max-height: 160px;
    }
 .MobileulNone{
 display: none;

@@ -11,7 +11,7 @@ import InputImgRegistMemb from '../components/InputImgRegistMemb'
 function RegisterMember() {
 const [MemberToStorage, setMemberToStorage] = useState<IMember>(
 {name:'',cpf:'',cellphone:'',address:'',maritalStatus:'',imagePersonal:'',
-dateOfBirth:'',nanoId: nanoid(),id:''});
+formatImg:'',dateOfBirth:'',nanoId: nanoid(),id:''});
 const { setBoxMember,BoxMember } = useContext(RegistContext) as IBoxMember
 const [MsgSuccess,setMsgSuccess] = useState<boolean>(false)
 const [MsgBtnWait,setMsgBtnWait] = useState<boolean>(false)
@@ -25,7 +25,7 @@ if (MemberToStorage.id !== '') {
   setBoxMember(prevBoxMember => [...prevBoxMember, MemberToStorage]);
   setMemberToStorage((
 {name:'',cpf:'',cellphone:'',address:'',maritalStatus:'',imagePersonal:'',
-dateOfBirth:'',nanoId: nanoid(),id:''}));
+formatImg:'',dateOfBirth:'',nanoId: nanoid(),id:''}));
 }   
 }, [InputHasValue,BoxMember,MemberToStorage]) 
 
@@ -43,7 +43,7 @@ setMsgBtnWait(false) } }
 
 return <div className='RMbgGray'>
 <div className="RMContainer">
-<h2>Cadastro de Membro</h2>
+<h2>Cadastrar Membro</h2>
 <div className="RMSquare">
 
 <InputImgRegistMemb MsgBtnWait={MsgBtnWait} setMemberToStorage={setMemberToStorage} 
@@ -55,8 +55,7 @@ setInputHasValue={setInputHasValue} setMsgBtnWait={setMsgBtnWait} MsgBtnWait={Ms
 </div>
 
     </div>
-    {/* <button onClick={()=> console.log(BoxMember)  }>TESTE</button> */}
-
+    {/* <button onClick={()=> console.log(MemberToStorage)  }>TESTE</button> */}
     </div> 
 }
 

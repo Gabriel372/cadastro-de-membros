@@ -84,8 +84,14 @@ max-width: 180px ;
     background-color: rgb(39, 121, 214);
     border: 1px solid rgb(39, 121, 214);
  }
+.IEMform{
+justify-content: space-between;    
+}
+.IEMinputDate>input {
+margin: 0;
 
 
+}
 
 
 }   

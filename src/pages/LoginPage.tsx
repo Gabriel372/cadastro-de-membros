@@ -43,6 +43,7 @@ setMsg({LoadBtn:false,EmailOrPasswrdWrong:false,FillTheFields:false}) } }
 
     return <div className='divDadLog'>
 <div className='LogContainer'>
+<h3>Cadastro de membros</h3>    
 <h2>Login </h2>
 
 <div  className='LogdivIconRelat'> 
@@ -51,8 +52,7 @@ setMsg({LoadBtn:false,EmailOrPasswrdWrong:false,FillTheFields:false}) } }
 </span>
 
 <div className='LogSquare'>
-<h3>Bem vindo!</h3>
-
+{/* <h3>Bem vindo!</h3> */}
 <form onSubmit={ClickLog} onClick={DisableMsg}>
 <input className='LogInput' autoFocus type="email" name='email'
 placeholder='Digite seu email' onChange={ChangeInput} value={AdmLog.email}/>

@@ -12,6 +12,8 @@ display: flex;
 justify-content: center;
 align-items: center;
 color: gray;
+/* width: 150px;
+height: 150px; */
 }
 .IRMlabelSelectPhoto{
 background-color: rgb(39, 121, 214);
@@ -24,29 +26,49 @@ padding: 5px;
 .IRMspan2{
 display: flex;
 }
+/* .IRMdivBtnFoto>:nth-child(2):hover{
+background-color: red;
+} */
+
 .IRMbtnRemovefoto{
 background-color: rgb(39, 121, 214);
 border-radius: 5px;
 color: white;
 border:rgb(39, 121, 214);
-padding: 5px;
+padding: 8px 0px 8px 0px;
 font-size: 15px;
-margin-left: 10px;
+/* margin-left: 10px; */
 cursor: pointer;
 display: flex;
 align-items: center;
+justify-content: center;
 }
+.IRMbtnRemovefoto:hover{
+background-color: rgb(170, 18, 18);
+}
+
 .IRMbtnRemovefoto>:nth-child(1){
 margin-right: 3px;
 }
-
+/* dasdsad */
 .IRMdivBtnFoto{
     display: flex;
-    flex-direction: row;
+    flex-direction: column-reverse;
+    height: 170px;
+    justify-content: space-around;
 }
-.IRMdivBtnFoto>:nth-child(1):hover,.IRMdivBtnFoto>:nth-child(2):hover{
+.IRMdivBtnFoto>:nth-child(1):hover{
 background-color: blue;
 }
+.IIElandscapeImg{
+max-width: 230px;
+border-radius: 4px;
+}
+.IIEportraitImg{
+max-height: 200px;
+border-radius: 4px; 
+}
+
 @media (max-height: 450px) {
 .IRMdivBtnFoto {
 flex-direction: column-reverse;
@@ -58,18 +80,30 @@ width: 100%;
 /* padding: 10px 0 10px 0; */
 height: 40px;
 font-size: 16px;
-margin-left: 0;
+margin: 0 0 5px 0;
+/* margin-left: 0; */
+/* margin: 0; */
 width: 100%;
 display: flex;
 justify-content: center;
 }
+.IRMbtnRemovefoto:hover {
+    background-color: rgb(39, 121, 214);
+ }
 .IRMspan2 {
 justify-content: center;
 }    
 .IRMiconTrash{
     font-size: 22px;
 } 
-.IRMdivBtnFoto>:nth-child(1):hover,.IRMdivBtnFoto>:nth-child(2):hover{
+.IRMdivBtnFoto>:nth-child(1):hover{
     background-color: rgb(39, 121, 214);    }
+.IIEportraitImg{
+max-height: 125px;
+}
+.IRMlabelFile > :nth-child(1) {
+    margin-bottom: 5px;    
+}
+
 
 }

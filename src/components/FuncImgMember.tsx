@@ -1,6 +1,14 @@
 import { ref, uploadBytes, getDownloadURL,listAll } from "firebase/storage";
 import { storage } from "./firebase";
 
+export async function CheckFormatImgIsLandScape(url: string): Promise<boolean | undefined> {
+  return new Promise((resolve, reject) => {
+   const img = new Image();
+  img.onload = () => {
+   const isLandscape = img.width > img.height;
+  resolve(isLandscape) };
+  img.onerror = reject;
+   img.src = url }) }
 
 export async function UploadImgMember(img:File,cpf:number|string) {
     const storageRef = ref(storage,`fbimages/(${cpf})`);

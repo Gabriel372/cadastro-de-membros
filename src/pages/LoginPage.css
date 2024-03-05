@@ -11,7 +11,17 @@
     align-items: center;
     flex-direction: column;
     padding-bottom: 10px;
-    } 
+} 
+.LogContainer > h3{
+font-size: 22px;
+margin: 7px 0 0 0;
+color: rgb(39, 48, 175);
+}
+.LogContainer > h2{
+font-size: 18px;
+}
+
+
     .LogSquare{
     max-width: 350px;
     border: 0.1px solid rgb(201, 196, 196);    

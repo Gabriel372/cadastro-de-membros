@@ -14,8 +14,11 @@ function RemoveAdmEpage() {
     sessionStorage.removeItem('ActualPage');  
     sessionStorage.removeItem('admStorage');  
     setIsLoggedIn(false);
-    }
- 
+}
+function SaveActualPage(page:string) {
+sessionStorage.setItem('ActualPage',page)
+}
+
 return <div className='MobileContainer' >
 
 <button className='btnMobile' onClick={()=>{setInt(!interrupt)}}  >
@@ -25,42 +28,14 @@ return <div className='MobileContainer' >
 <div className={`menuShow ${interrupt ? 'menushowOpen' : ''}`} onClick={()=> setInt(!interrupt)} > 
 <ul className={`${interrupt ? 'MobileUl': 'MobileulNone'}`}>
 
-<Link to='/RegisterMember'>Cadastrar membro</Link>
- {/* <Link to='/RegisterAdm'>Cadastrar administrador</Link>  */}
- <Link to='/ShowMember'>Membros cadastrados</Link>
- <Link to='/AccountAdm'>Minha Conta</Link>
+<Link onClick={()=>SaveActualPage('/RegisterMember')} to='/RegisterMember'>Cadastrar membro</Link>
+ <Link onClick={()=>SaveActualPage('/ShowMember')}  to='/ShowMember'>Membros cadastrados</Link>
+ <Link onClick={()=>SaveActualPage('/AccountAdm')}  to='/AccountAdm'>Minha Conta</Link>
  <Link onClick={RemoveAdmEpage} to='/' >Sair</Link>
-
-</ul> </div>
-
-
-{/* <ul className={`MobileUl ${interrupt ? 'mobileUlOpen' : ''}`}>
-
-<Link to='/RegisterMember'>Cadastrar membro</Link>
- <Link to='/RegisterAdm'>Cadastrar administrador</Link> 
- <Link to='/ShowMember'>Membros cadastrados</Link>
- <Link to='/AccountAdm'>Minha Conta</Link>
- <Link onClick={()=>{setIsLoggedIn(false) }} to='/' >Sair</Link>
-
-</ul> */}
-
-
- {/* {interrupt && ( <div className='menuShow' onClick={()=> setInt(!interrupt)} > 
-<ul className={`MobileUl ${interrupt ? 'mobileUlOpen' : ''}`}>
-
-<Link to='/RegisterMember'>Cadastrar membro</Link>
- <Link to='/RegisterAdm'>Cadastrar administrador</Link> 
- <Link to='/ShowMember'>Membros cadastrados</Link>
- <Link to='/AccountAdm'>Minha Conta</Link>
- <Link onClick={()=>{setIsLoggedIn(false) }} to='/' >Sair</Link>
-
-</ul> </div>) } */}
-
-{/* <button className='btnMobile' onClick={()=>{setInt(!interrupt)}}  >
-{interrupt ? <IoClose />:<FiMenu />}
-</button> */}
+</ul> 
 </div>
 
+</div>
 }
 
 export default MenuMobile

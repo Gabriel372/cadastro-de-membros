@@ -23,6 +23,7 @@ export class IAdm {
             public address: string = '',
             public maritalStatus: string = '',
             public imagePersonal: string = '',
+            public formatImg:string = '',
             public dateOfBirth:string='',
             // public dateOfBaptism:string='',
             public nanoId: string = nanoid(),
@@ -48,7 +49,32 @@ export class IAdm {
         to: string;
         smooth: boolean;
         duration: number;
-      }
+}
+export type IRegistImg = {
+    show:string;
+    filename:File | null
+    formatIsLandscape:boolean | undefined
+    hasFormatImgToCheck:boolean
+}
+export type ILoggedIn = {
+IsLoggedIn:boolean;
+setIsLoggedIn:React.Dispatch<React.SetStateAction<boolean>>; 
+}
+export type IEdtImg = {
+    show:string;
+filename:File | null
+formatImg:string
+hasFormatImgToCheck:boolean
+}
+export type IEditInputMember = {
+    MemberEdit:IMember
+    setMemberEdit:React.Dispatch<React.SetStateAction<IMember>>; 
+    setHasMemberToUpdt:React.Dispatch<React.SetStateAction<boolean>>;  
+MsgBtnWait:boolean
+}
+
+
+
 
 
     // export type IHasMember {
@@ -75,11 +101,6 @@ export class IAdm {
     // }
     //     }
 
-
-    export type ILoggedIn = {
-        IsLoggedIn:boolean;
-        setIsLoggedIn:React.Dispatch<React.SetStateAction<boolean>>; 
-        }
 
 
 // export type IBoxTask = {

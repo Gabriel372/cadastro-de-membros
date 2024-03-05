@@ -9,7 +9,19 @@ import ShowMember from './pages/ShowMember'
 import AccountAdm from './pages/AccountAdm'
 // import { MyLinkProps } from './components/Types';
 // import { Link, animateScroll as scroll } from "react-scroll";
+//==================
 
+//CLONAR PASTA CADASTRO DE CLIENTES
+
+//RECRIAR CADASTRO DE CLIENTES NA PASTA REACTS
+
+//INSTALRA REACT JS COM TS
+
+//INSTALAR EM APP.TSX : REACT ICONS ,FIREBASE , REACT ROUTER 
+
+//EXLUIR ANTIGO REPOSITORIO
+
+//FAZER DEPLOY DA PASTA MAIN NO GITHUB 
 
 function App() {
 //to={to} smooth={smooth} duration={duration}

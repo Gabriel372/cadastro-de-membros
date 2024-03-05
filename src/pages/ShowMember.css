@@ -28,8 +28,9 @@ padding: 5px;
 text-align: left;
 display: flex;
 flex-direction: column;
+justify-content: space-between;
 }
-.SMli>p{
+.SMdivp>p{
 margin: 0 0 5px 0;
 }
 .SMdivBtn {
@@ -64,28 +65,43 @@ transition: 0.2s;
 width: 100%;
 }
 .SMdivImg{
-width: 250px;
-height: 140px;
-border: 1px solid rgb(226, 226, 226);
-background-color: rgb(241, 240, 240);
 border-radius: 4px;
+display: flex;
 overflow: hidden;
+justify-content: center;
 }
+.SM2divImg{
+ border-radius: 4px;
+
+}
+
 .SMdivSpan{
 display: flex;
 justify-content: center;
 align-items: center;
-width: 250px;
-height: 140px;
+width: 150px;
+height: 150px;
 border: 1px solid rgb(226, 226, 226);
 background-color: rgb(241, 240, 240);
 border-radius: 4px;
 overflow: hidden;
 color: gray;
+margin: 0 auto 0 auto;
 }
 .SMmsgBoxempty{
 margin-top: 0;    
 }
+.SMlandscapeImg{
+max-width: 230px;
+border-radius: 4px;
+}
+.SMportraitImg{
+ max-height: 200px;
+ border-radius: 4px;
+
+}
+
+
 @media (max-width: 1100px) {
 .SMul{
 grid-template-columns: auto auto;

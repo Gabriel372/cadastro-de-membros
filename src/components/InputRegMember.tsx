@@ -19,6 +19,8 @@ interface IMsg {
 function InputRegMember({MemberToStorage,setMemberToStorage,setMsgBtnWait,MsgBtnWait}:IInputRM) {
 const { BoxMember } = useContext(RegistContext) as IBoxMember
 const [MsgErro,setMsgErro] = useState<IMsg>({CpfIsRepeated:false,CpfIsWrong:false,MemberIsNotComplete:false})
+const DateActual=`${(new Date().getDate()).toString().padStart(2,'0')}/${(new Date().getMonth()+1).toString().padStart(2,'0')}/${new Date().getFullYear()}`
+const [DayActual,MonthActual,YearActual] = DateActual.split('/');
 
 function ClickRegister(e: React.FormEvent<HTMLFormElement>) {
   e.preventDefault();
@@ -88,7 +90,7 @@ name='maritalStatus' onChange={ChangeInput} />Casado
 </label>
 
 <label className='RMInputDate'>Data de nascimento: <input type="date" className='RMInputDateFont'
-onChange={ChangeInput } value={MemberToStorage.dateOfBirth} name='dateOfBirth'/>
+onChange={ChangeInput } value={MemberToStorage.dateOfBirth} name='dateOfBirth'  max={`${YearActual}-${MonthActual}-${DayActual}`}/>
 </label>
 {MsgErro.MemberIsNotComplete && <p className='IRMmsgAlert' >Somente a foto pode ficar em branco, preencha os campos</p> }
 

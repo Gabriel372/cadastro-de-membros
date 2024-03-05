@@ -3,14 +3,11 @@ import {useState,useRef,useEffect  } from 'react'
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { storage } from "./firebase";
 import { IMember } from '../components/Types';
-import '../components/InputRegMember.css'
 import { FaTrashAlt } from "react-icons/fa";
 import './InputRegMember.css'
+import {CheckFormatImgIsLandScape} from './FuncImgMember'
+import { IRegistImg } from "../components/Types"
 
-interface IRegistImg{
-    show:string;
-filename:File | null
-}
 interface IRegistMemb{
 MsgBtnWait:boolean
 setMemberToStorage:React.Dispatch<React.SetStateAction<IMember>>
@@ -19,7 +16,7 @@ setInputHasValue:React.Dispatch<React.SetStateAction<boolean>>
 }
 
 function InputImgRegistMemb({MsgBtnWait,setMemberToStorage,MemberToStorage,setInputHasValue}:IRegistMemb) {
-const [ImgUpload, setImgUpload] = useState<IRegistImg>({show:'',filename:null});
+const [ImgUpload, setImgUpload] = useState<IRegistImg>({show:'',filename:null,formatIsLandscape:undefined,hasFormatImgToCheck:false});
 const inputFileRef = useRef<HTMLInputElement>(null);
 
 useEffect(() => {
@@ -27,7 +24,14 @@ if (MsgBtnWait && ImgUpload.filename !== null) {
 UploadImgMember(ImgUpload.filename,MemberToStorage.cpf)    
 }
 else if(MsgBtnWait && ImgUpload.filename === null) { setInputHasValue(true)}
-}, [MsgBtnWait]) 
+else if(ImgUpload.show !== '' && ImgUpload.hasFormatImgToCheck){
+CheckFormatImgIsLandScape(ImgUpload.show).then((data)=>{
+data ? setMemberToStorage(prevState => ({...prevState,formatImg:'landscape'})) :
+setMemberToStorage(prevState => ({...prevState,formatImg:'portrait'})) ;
+setImgUpload(prevState => ({...prevState,formatIsLandscape:data,hasFormatImgToCheck:false}));
+})
+}
+}, [MsgBtnWait,ImgUpload]) 
 
 async function UploadImgMember(img:any,cpf:number|string) {
     const storageRef = ref(storage, `fbimages/(${cpf})`);
@@ -38,13 +42,13 @@ async function UploadImgMember(img:any,cpf:number|string) {
     ClearInputFile();
     return url;
     }
-    
+   
 function ChangeImg(event: React.ChangeEvent<HTMLInputElement>) {
     const file = event.target.files?.[0];
     if (file ) {
         const reader = new FileReader();
         reader.onload = () => {
-    setImgUpload((prevState => ({...prevState,show:reader.result as string,filename:file})))
+    setImgUpload((prevState => ({...prevState,show:reader.result as string,filename:file,hasFormatImgToCheck:true})))
     }    
     reader.readAsDataURL(file);
 }}
@@ -53,23 +57,24 @@ function ClearInputFile() {
  if (inputFileRef.current) {
  inputFileRef.current.value = '';
  }
- setImgUpload({show:'',filename:null});
+ setImgUpload({show:'',filename:null,formatIsLandscape:undefined,hasFormatImgToCheck:false});
+//  setMemberToStorage(prevState => ({...prevState,formatImg:''})) ;
 }
+function RemoveImg() {
+setImgUpload({show:'',filename:null,formatIsLandscape:undefined,hasFormatImgToCheck:false}) ;
+setMemberToStorage(prevState => ({...prevState,formatImg:''}))  }
 
 return <div>
-
 <input id='file-input' type="file" accept='image/*' className='IRMlinputFileHidden' onChange={ChangeImg} ref={inputFileRef}/>
 
 <div className='IRMlabelFile' >
 
-<div className={ImgUpload.show  === '' ? 'IRMdivToTextSpan' : ''}>
+<div className={`${ImgUpload.show  === '' ? 'IRMdivToTextSpan':''}`}>
+
 {ImgUpload.show !== '' ?
-<img src={ImgUpload.show} alt="Imagem para selecionar" width="100%"/> :
+ <img src={ImgUpload.show} alt="Imagem para selecionar" className={`${ImgUpload.show !== '' && ImgUpload.formatIsLandscape ?'IRMlandscapeImg':'IRMportraitImg'}`}/> : 
 <span>Sem foto</span>}    
 </div>
-
-
-
 
 <div className="IRMdivBtnFile">
 
@@ -80,7 +85,7 @@ Selecionar foto
 </label>
 </span>
 
-<button onClick={()=> setImgUpload((prevState => ({...prevState,show:'',filename:null})))}>
+<button onClick={RemoveImg}>
 <FaTrashAlt className='IRMiconTrash'/>Remover foto</button>
 </div>
 

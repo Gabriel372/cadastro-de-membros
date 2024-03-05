@@ -54,7 +54,7 @@ setMsgSuccess(true); setTimeout(() => setMsgSuccess(false) ,8000)  }
 
 function CloseModal() {
 setMemberEdit({name:'',cpf:'',cellphone:'',address:'',
-maritalStatus:'',imagePersonal:'',dateOfBirth:'',nanoId: nanoid(),id:''});    
+maritalStatus:'',imagePersonal:'',formatImg:'',dateOfBirth:'',nanoId: nanoid(),id:''});    
     setModalEditIsOpen(false)
 }
 

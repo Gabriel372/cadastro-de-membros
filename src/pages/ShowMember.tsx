@@ -14,7 +14,7 @@ const [ModalDelIsOpen,setModalDelIsOpen] = useState<boolean>(false)
 const [MemberDel,setMemberDel] = useState<IMember>()
 const [ModalEditIsOpen,setModalEditIsOpen] = useState<boolean>(false)
 const [MemberEdit,setMemberEdit] = useState<IMember>(   {name:'',cpf:'',cellphone:'',address:'',
-maritalStatus:'',imagePersonal:'',dateOfBirth:'',nanoId: nanoid(),id:''})
+maritalStatus:'',imagePersonal:'',formatImg:'',dateOfBirth:'',nanoId: nanoid(),id:''})
 const [MsgBoxEmpty,setMsgBoxEmpty] = useState<string>('')
 
 useEffect( () => { 
@@ -24,7 +24,7 @@ useEffect( () => {
 
     function ConvertDate(value:string) { const [year, month, day] = value.split('-');
     const DateConverted = `${day}/${month}/${year}`; return DateConverted; }
-//{ReturnImgForCpf(member.cpf,BoxImgMember)}
+
 return <div className='bgGray'>
 
 <div className='SMContainer'>
@@ -37,16 +37,18 @@ return <div className='bgGray'>
 
 <div className={member.imagePersonal ? 'SMdivImg' : 'SMdivSpan'}>
 {member.imagePersonal ?
-<img src={member.imagePersonal} alt="Imagem para CPF" width="" className='SMimgPersonal'/>:
+<img src={member.imagePersonal} alt="Imagem" className={`${member.formatImg === 'landscape' ? 'SMlandscapeImg':'SMportraitImg'}`}/>:
 <span>Sem foto</span> }
 </div>
 
+<div className='SMdivp'>
 <p ><b>Nome:</b> {member.name}</p>
 <p ><b>Nº do cpf:</b> {member.cpf}</p>
 <p ><b>Nº do celular:</b> {member.cellphone}</p>
 <p ><b>Endereço:</b> {member.address}</p>
 <p ><b>Estado civil:</b> {member.maritalStatus}</p>
 <p ><b>Data de nascimento:</b> {ConvertDate(member.dateOfBirth)}</p>
+</div>
 
 <div className='SMdivBtn'>
 <button onClick={()=> {setMemberDel(member);setModalDelIsOpen(true) }} 
@@ -61,9 +63,6 @@ className='SMbtnEdit' ><FaPencilAlt /> Editar</button>
 }
 </ul>
 : <p className='SMmsgBoxempty'>{MsgBoxEmpty}</p>}
-
-
-
 
 </div>
 
