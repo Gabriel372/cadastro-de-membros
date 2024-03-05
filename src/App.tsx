@@ -11,6 +11,14 @@ import AccountAdm from './pages/AccountAdm'
 // import { Link, animateScroll as scroll } from "react-scroll";
 //==================
 
+// REMOVER DA TAG IMG:IMG PARA SELECONAR EM SHOWMEMBER
+
+//REMOVER DA TAG IMG:IMG PARA SELECONAR EM MODALEDIT
+
+//LIMITAR DATA PARA O PRESENTE EM MODEDIT
+
+
+//===========
 //CLONAR PASTA CADASTRO DE CLIENTES
 
 //RECRIAR CADASTRO DE CLIENTES NA PASTA REACTS

@@ -7,6 +7,9 @@ import { FaTrashAlt } from "react-icons/fa";
 import './InputRegMember.css'
 import {CheckFormatImgIsLandScape} from './FuncImgMember'
 import { IRegistImg } from "../components/Types"
+//import heic2any from 'heic2any';
+import heic2jpeg from 'heic2any';
+
 
 interface IRegistMemb{
 MsgBtnWait:boolean
@@ -41,17 +44,7 @@ async function UploadImgMember(img:any,cpf:number|string) {
     setInputHasValue(true)   ;
     ClearInputFile();
     return url;
-    }
-   
-function ChangeImg(event: React.ChangeEvent<HTMLInputElement>) {
-    const file = event.target.files?.[0];
-    if (file ) {
-        const reader = new FileReader();
-        reader.onload = () => {
-    setImgUpload((prevState => ({...prevState,show:reader.result as string,filename:file,hasFormatImgToCheck:true})))
-    }    
-    reader.readAsDataURL(file);
-}}
+}
 
 function ClearInputFile() {
  if (inputFileRef.current) {
@@ -64,6 +57,32 @@ function RemoveImg() {
 setImgUpload({show:'',filename:null,formatIsLandscape:undefined,hasFormatImgToCheck:false}) ;
 setMemberToStorage(prevState => ({...prevState,formatImg:''}))  }
 
+
+async function ChangeImg(event: React.ChangeEvent<HTMLInputElement>) {
+    const file = event.target.files?.[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = async () => {
+            let result = reader.result;
+            if (file.type === 'image/heic') {
+                const heicBlob = new Blob([new Uint8Array(result as ArrayBuffer)]);
+                const jpegBlob:any = await heic2jpeg({ blob: heicBlob, toType: "image/jpeg", quality: 0.8 });
+                result = URL.createObjectURL(jpegBlob);
+            }
+            setImgUpload((prevState => ({...prevState, show: result as string, filename: file, hasFormatImgToCheck: true})));
+        }
+        reader.readAsArrayBuffer(file);
+    } }
+ 
+// function ChangeImg(event: React.ChangeEvent<HTMLInputElement>) {
+//     const file = event.target.files?.[0];
+//     if (file ) {
+//         const reader = new FileReader();
+//         reader.onload = () => {
+//     setImgUpload((prevState => ({...prevState,show:reader.result as string,filename:file,hasFormatImgToCheck:true})))
+//     }    
+//     reader.readAsDataURL(file);
+// }}
 return <div>
 <input id='file-input' type="file" accept='image/*' className='IRMlinputFileHidden' onChange={ChangeImg} ref={inputFileRef}/>
 

@@ -37,7 +37,7 @@ return <div className='bgGray'>
 
 <div className={member.imagePersonal ? 'SMdivImg' : 'SMdivSpan'}>
 {member.imagePersonal ?
-<img src={member.imagePersonal} alt="Imagem" className={`${member.formatImg === 'landscape' ? 'SMlandscapeImg':'SMportraitImg'}`}/>:
+<img src={member.imagePersonal} alt="Foto" className={`${member.formatImg === 'landscape' ? 'SMlandscapeImg':'SMportraitImg'}`}/>:
 <span>Sem foto</span> }
 </div>
 
