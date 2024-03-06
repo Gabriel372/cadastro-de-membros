@@ -52,7 +52,7 @@ export class IAdm {
 }
 export type IRegistImg = {
     show:string;
-    filename:File | null
+    filename:Blob | null
     formatIsLandscape:boolean | undefined
     hasFormatImgToCheck:boolean
 }

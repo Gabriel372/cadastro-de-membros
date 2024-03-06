@@ -48,6 +48,10 @@ font-size: 15px;
 align-self: center;
 cursor: pointer;
 margin-bottom: 5px;
+padding: 3px 0 3px 0;
+
+
+
 /* margin-bottom: 18px; */
 }
 .IEMmsgAlert{
