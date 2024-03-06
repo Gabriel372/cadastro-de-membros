@@ -38,7 +38,7 @@ color: white;
     .HeaderContainer{
 height: 80px;}   
 
-    }
+}
 @media (max-width: 560px) {
     .HDnavDesktop{
 display: none;
@@ -48,5 +48,13 @@ display: none;
     .HeaderContainer img{
         height: 45px;
     } 
+}
+@media (max-height: 450px) {
+    .HeaderContainer{
+height: 50px;}
+.HeaderContainer>img{
+    height: 40px;}      
 
-    }
+}
+
+

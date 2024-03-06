@@ -131,15 +131,34 @@ height: 150px;
     border-color:rgb(39, 121, 214);   
 }
 }
+@media (max-width: 410px) {
+.IRMlabelFile {padding: 0 }
+}
+@media (max-width: 310px) {
+.IRMlabelFile {
+flex-direction: column;
+
+}
+
+        }
+
 @media (max-height: 450px) {
 .IRMlabelFile{
-flex-direction: row; 
+flex-direction: column; 
 padding: 0 0 0 10px;   
-width: 100%;
+width: 30vw;
+/* width: 270px; */
 height: 240px;
-justify-content: space-around;
+justify-content: space-between;
 box-sizing: border-box;
 }
      
 }  
-    
+@media (max-height: 330px) {
+.IRMspanDad>span { 
+width: 15vw;
+height: 35vh;
+}
+
+
+}    

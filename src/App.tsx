@@ -7,6 +7,8 @@ import RegisterAdm from './pages/RegisterAdm'
 import { RegistContextProvider } from './components/RegistContext';
 import ShowMember from './pages/ShowMember'
 import AccountAdm from './pages/AccountAdm'
+import heic2jpeg from 'heic2any';
+
 // import { MyLinkProps } from './components/Types';
 // import { Link, animateScroll as scroll } from "react-scroll";
 //==================

@@ -117,5 +117,12 @@ grid-template-columns: auto auto;
         background-color: rgb(0, 149, 255);  
     border-color:rgb(0, 149, 255);  
 }
- }
+}
+@media (max-height: 450px) {
+    .SMul {grid-template-columns: auto auto;
+    }
+}
+
+
+
         

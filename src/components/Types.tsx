@@ -62,7 +62,7 @@ setIsLoggedIn:React.Dispatch<React.SetStateAction<boolean>>;
 }
 export type IEdtImg = {
     show:string;
-filename:File | null
+filename:Blob | null
 formatImg:string
 hasFormatImgToCheck:boolean
 }

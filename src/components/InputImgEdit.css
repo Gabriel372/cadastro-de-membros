@@ -1,7 +1,6 @@
 
 .IRMiconPhoto{
 font-size: 25px;
-
 }
 .IRMiconTrash{
     font-size: 20px;
@@ -68,6 +67,35 @@ border-radius: 4px;
 max-height: 200px;
 border-radius: 4px; 
 }
+@media (max-width: 800px) {
+.IRMbtnRemovefoto:hover{
+ background-color: rgb(39, 121, 214);
+}
+.IRMdivBtnFoto>:nth-child(1):hover {
+    background-color: rgb(39, 121, 214); 
+}   
+    
+        }
+
+
+
+@media (max-width: 410px) {
+.IIElandscapeImg {width: 41vw;}
+}
+@media (max-width: 310px) {
+.IRMdivBtnFoto {flex-direction: row;
+height: auto;
+padding: 0;
+}
+.IRMbtnRemovefoto {
+margin-left: 4px;
+padding-left: 3px;
+}
+.IIElandscapeImg{
+max-width: 100%;}
+
+
+    }
 
 @media (max-height: 450px) {
 .IRMdivBtnFoto {
@@ -99,11 +127,28 @@ justify-content: center;
 .IRMdivBtnFoto>:nth-child(1):hover{
     background-color: rgb(39, 121, 214);    }
 .IIEportraitImg{
-max-height: 125px;
+max-height: 135px;
 }
 .IRMlabelFile > :nth-child(1) {
     margin-bottom: 5px;    
 }
-
+.IRMlabelFile > :nth-child(1) {
+    margin-bottom: 0;
+}
 
 }
+@media (max-width: 630px) and (max-height: 440px) {
+    .IIElandscapeImg {
+    width: 26vw;
+    }
+    .IRMlabelFile {
+    height: 100%;
+    padding: 0;
+    }
+    .IIEportraitImg {
+    max-height: 40vh;
+    }
+    
+    
+    }  
+

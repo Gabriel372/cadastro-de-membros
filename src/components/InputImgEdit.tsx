@@ -8,7 +8,8 @@ import {RegistContext } from './RegistContext'
 import './InputImgEdit.css'
 import { FaTrashAlt } from "react-icons/fa";
 import {CheckFormatImgIsLandScape} from './FuncImgMember'
-import heic2jpeg from 'heic2any';
+import heic2any from 'heic2any';
+// import heic2jpeg from 'heic2any';
 
 
 function InputImgEdit({MemberEdit,setMemberEdit,setHasMemberToUpdt,MsgBtnWait}:IEditInputMember) {
@@ -58,18 +59,50 @@ setMemberEdit((MemberEdit => ({...MemberEdit,imagePersonal:''})))
 async function ChangeImg(event: React.ChangeEvent<HTMLInputElement>) {
 const file = event.target.files?.[0];
 if (file ) {
+ if (file.type === 'image/heic') {
+heic2any({blob:file,toType:"image/jpeg",}).then((jpegBlob: any) => {
 const reader = new FileReader();
-reader.onload = async () => {
-let result = reader.result;
-if (file.type === 'image/heic') {
-const heicBlob = new Blob([new Uint8Array(result as ArrayBuffer)]);
-const jpegBlob:any = await heic2jpeg({ blob: heicBlob, toType: "image/jpeg", quality: 0.8 });           
- result = URL.createObjectURL(jpegBlob);
+reader.onload = () => {
+setImgEdit(prevState => ({...prevState,show:reader.result as string,filename:jpegBlob,hasFormatImgToCheck:true}));
+ }        
+ reader.readAsDataURL(jpegBlob);}).catch((e: Error) => console.error(e));
+ }else {const reader = new FileReader();
+reader.onload = () => {
+setImgEdit(prevState => ({...prevState,show:reader.result as string,filename:file,hasFormatImgToCheck:true}));
 }
-setImgEdit((prevState => ({...prevState,show:reader.result as string,filename:file,hasFormatImgToCheck:true})))
-}   
-reader.readAsDataURL(file);
-}}
+reader.readAsDataURL(file) ;}}}
+
+//     const reader = new FileReader();
+//     reader.onload = async () => {
+//     let result = reader.result;
+//     if (file.type === 'image/heic') {
+//     const heicBlob = new Blob([new Uint8Array(result as ArrayBuffer)]);
+//     const jpegBlob:any = await heic2any({ blob: heicBlob, toType: "image/jpeg", quality: 0.8 });           
+//      result = URL.createObjectURL(jpegBlob);
+//     }
+//     setImgEdit((prevState => ({...prevState,show:reader.result as string,filename:file,hasFormatImgToCheck:true})))
+//     }   
+//     reader.readAsDataURL(file);
+//     }
+// }
+
+// async function ChangeImg(event: React.ChangeEvent<HTMLInputElement>) {
+// const file = event.target.files?.[0];
+// if (file ) {
+// const reader = new FileReader();
+// reader.onload = async () => {
+// let result = reader.result;
+// if (file.type === 'image/heic') {
+// const heicBlob = new Blob([new Uint8Array(result as ArrayBuffer)]);
+// const jpegBlob:any = await heic2any({ blob: heicBlob, toType: "image/jpeg", quality: 0.8 });           
+//  result = URL.createObjectURL(jpegBlob);
+// }
+// setImgEdit((prevState => ({...prevState,show:reader.result as string,filename:file,hasFormatImgToCheck:true})))
+// }   
+// reader.readAsDataURL(file);
+// }}
+
+
 // async function ChangeImg(event: React.ChangeEvent<HTMLInputElement>) {
 //     const file = event.target.files?.[0];
 //     if (file) {
@@ -87,7 +120,7 @@ reader.readAsDataURL(file);
 //     } }
 
     return <div>
-<input id='file-input' type="file" accept='image/*' className='IRMlinputFileHidden'  onChange={ChangeImg}/>
+<input id='file-input' type="file" accept="image/*,.heic,.heif" className='IRMlinputFileHidden' onChange={(event)=>ChangeImg(event)}/>
 <div className='IRMlabelFile'>
 <span className="IRMspanDad">
 {ImgEdit.show !== '' ? <img src={ImgEdit.show} alt="Foto" 

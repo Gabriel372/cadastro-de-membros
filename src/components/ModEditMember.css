@@ -1,4 +1,6 @@
-
+.MDMContainer{
+    overflow-x: scroll;
+}
 .MDEMsquare{
     border: 1px solid gray;   
     border-radius: 5px;
@@ -10,7 +12,6 @@ margin: 0 5px 0 5px;
 display: flex;
     flex-direction: column;
     justify-content: space-around;
-
 }
 .MDEMdivH3Btn{
 display: flex;
@@ -53,16 +54,36 @@ background-color: rgb(186, 233, 186);
         background-color: white;
         color: rgb(0, 149, 255);
     }
-     }
+}
+@media (max-width: 310px) {
+.MDEMsquare {
+padding: 4px 4px 4px 4px;
+
+}
+
+    
+}
+
+
      @media (max-height: 450px) {
 .MDEMinputTextEImg{
 display: flex;
-flex-direction: row-reverse;    
+flex-direction: row-reverse;   
+justify-content: space-around; 
 }
 .MDEMsquare{
 max-width: 690px;
+padding-top: 0;
 }
 .MDEMmsgSuccess{
 margin-top: 5px;
 }
 }
+@media (max-width: 630px) and (max-height: 440px) {
+.MDEMsquare {
+padding: 0 5px 3px 5px;
+}  
+}
+
+
+
