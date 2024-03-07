@@ -60,11 +60,11 @@ margin-right: 3px;
 background-color: blue;
 }
 .IIElandscapeImg{
-max-width: 230px;
+max-width: 200px;
 border-radius: 4px;
 }
 .IIEportraitImg{
-max-height: 200px;
+max-height: 160px;
 border-radius: 4px; 
 }
 .IIEmsgLoad{
@@ -80,28 +80,34 @@ border-radius: 4px;
 .IRMdivBtnFoto>:nth-child(1):hover {
     background-color: rgb(39, 121, 214); 
 }   
-    
-        }
+}
+@media (max-width: 500px) {
+.IIEportraitImg{
+max-height: 23vh;
 
+}
+}
 
 
 @media (max-width: 410px) {
 .IIElandscapeImg {width: 41vw;}
 }
 @media (max-width: 310px) {
-.IRMdivBtnFoto {flex-direction: row;
+/* .IRMdivBtnFoto {flex-direction: row;
 height: auto;
 padding: 0;
-}
+} */
 .IRMbtnRemovefoto {
 margin-left: 4px;
 padding-left: 3px;
 }
 .IIElandscapeImg{
 max-width: 100%;}
+}
 
 
-    }
+
+
 
 @media (max-height: 450px) {
 .IRMdivBtnFoto {
@@ -147,10 +153,13 @@ max-height: 135px;
     .IIElandscapeImg {
     width: 26vw;
     }
-    .IRMlabelFile {
+    .IIEMlabelFile {
     height: 100%;
     padding: 0;
-    }
+flex-direction: row;
+justify-content: space-around;
+width: 100%;
+}   
     .IIEportraitImg {
     max-height: 40vh;
     }

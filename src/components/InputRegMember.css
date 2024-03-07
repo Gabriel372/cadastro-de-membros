@@ -11,6 +11,40 @@ align-items: center;
 padding: 10px 10px 0 10px;
 /* min-height: 241px; */
 }
+.IIElabelFile{
+    border-radius: 5px;
+    justify-content: space-around;
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    align-items: center;
+    padding: 0px 10px 0 10px;
+    box-sizing: border-box;
+    /* min-height: 241px; */
+}
+.IIEspanDad{
+ 
+    display: flex;
+    width: 150px;
+    height: 150px;
+justify-content: center;
+align-items: center;
+}
+.IIEemptyImg{
+   background-color: rgb(240, 240, 240);
+    border: 1px solid rgb(219, 218, 218);
+    border-radius: 5px;
+    color:  rgb(151, 151, 151);
+    display: flex;
+    width: 150px;
+    height: 150px;
+justify-content: center;
+align-items: center;
+
+}
+
+
+
     .IRMlabelFile>* {
  padding: 5px;
         }
@@ -138,28 +172,64 @@ display: none;}
     border-color:rgb(39, 121, 214);   
 }
 }
+@media (max-width: 500px) {
+.IIEemptyImg{
+width: 28vw;
+height: 120px   
+}
+
+}
+
+
+
+
 @media (max-width: 410px) {
-.IRMlabelFile {padding: 0 }
+.IRMlabelFile {padding: 4px 0 0 4px }
+.IIElabelFile{
+padding: 0 3px 0 2px;    
+}
+
 }
 @media (max-width: 310px) {
 .IRMlabelFile {
 flex-direction: column;
-
+padding-top: 4px;
+}
+.IRMdivBtnFile {
+height: 14vh;
+}
+.IRMlandscapeImg{
+    max-width: 80vw;
 }
 
-        }
+
+
+}
 
 @media (max-height: 450px) {
 .IRMlabelFile{
-flex-direction: column; 
+flex-direction: row;
+width: 100%; 
 padding: 0 0 0 10px;   
-width: 30vw;
+/* width: 30vw; */
 /* width: 270px; */
 height: 240px;
-justify-content: space-between;
+justify-content: space-around;
 box-sizing: border-box;
 }
-     
+.IIElabelFile{
+flex-direction: column;
+justify-content: space-between;
+height: 65vh;
+}
+.IIEspanDad{
+height: 25vh;
+width: 12vw;
+}
+.IIEemptyImg{
+height: 30vh;
+}
+
 }  
 @media (max-height: 330px) {
 .IRMspanDad>span { 

@@ -60,16 +60,17 @@ setMemberEdit((MemberEdit => ({...MemberEdit,imagePersonal:''})))
 async function ChangeImg(event: React.ChangeEvent<HTMLInputElement>) {
 const file = event.target.files?.[0];
 if (file ) {
+setImgEdit(prevState => ({...prevState,fileIsLoading:true}));    
  if (file.type === 'image/heic') {
 heic2any({blob:file,toType:"image/jpeg",}).then((jpegBlob: any) => {
 const reader = new FileReader();
 reader.onload = () => {
-setImgEdit(prevState => ({...prevState,show:reader.result as string,filename:jpegBlob,hasFormatImgToCheck:true,fileIsLoading:true}));
+setImgEdit(prevState => ({...prevState,show:reader.result as string,filename:jpegBlob,hasFormatImgToCheck:true}));
  }        
  reader.readAsDataURL(jpegBlob);}).catch((e: Error) => console.error(e));
  }else {const reader = new FileReader();
 reader.onload = () => {
-setImgEdit(prevState => ({...prevState,show:reader.result as string,filename:file,hasFormatImgToCheck:true,fileIsLoading:true}));
+setImgEdit(prevState => ({...prevState,show:reader.result as string,filename:file,hasFormatImgToCheck:true}));
 }
 reader.readAsDataURL(file) ;}}}
 
@@ -122,13 +123,13 @@ reader.readAsDataURL(file) ;}}}
 
     return <div>
 <input id='file-input' type="file" accept="image/*,.heic,.heif" className='IRMlinputFileHidden' onChange={(event)=>ChangeImg(event)}/>
-<div className='IRMlabelFile'>
-<span className="IRMspanDad">
+<div className='IIElabelFile'>
+<span className="IIEspanDad">
 
 {!ImgEdit.fileIsLoading && <>
 {ImgEdit.show !== '' ? <img src={ImgEdit.show} alt="Foto" 
 className={`${ImgEdit.formatImg === 'landscape' ?'IIElandscapeImg':'IIEportraitImg'}`}/>
-:<span>Sem foto</span> } </>}
+:<span className="IIEemptyImg">Sem foto</span> } </>}
 
 {ImgEdit.fileIsLoading && <div></div>}
 
