@@ -9,7 +9,6 @@ flex-direction: row;
 background-color: white;
 align-items: center;
 padding: 10px 10px 0 10px;
-/* min-height: 241px; */
 }
 .IIElabelFile{
     border-radius: 5px;
@@ -20,10 +19,8 @@ padding: 10px 10px 0 10px;
     align-items: center;
     padding: 0px 10px 0 10px;
     box-sizing: border-box;
-    /* min-height: 241px; */
 }
 .IIEspanDad{
- 
     display: flex;
     width: 150px;
     height: 150px;
@@ -40,20 +37,11 @@ align-items: center;
     height: 150px;
 justify-content: center;
 align-items: center;
-
 }
-
-
-
-    .IRMlabelFile>* {
+.IRMlabelFile>* {
  padding: 5px;
-        }
+ }
 .IRMlabelFile > :nth-child(1){
-/* max-width: 300px;
-min-height:100px ;
-max-height: 300px; */
-/* min-width: 150px;
-min-height: 150px; */
 display: flex;
 border: 1px solid rgb(202, 202, 202);
 margin-bottom: 10px;
@@ -81,15 +69,11 @@ max-width: 250px;
     height: 150px;
     width: 150px;
 }
-
 .IRMdivBtnFile{
 display: flex;
 flex-direction: column-reverse;
 height: 170px;
 justify-content: space-around;
-/* max-height: 170px;
-height: 100%; */
-
 }
 .IRMdivBtnFile> :nth-child(1){
     cursor: pointer;
@@ -108,7 +92,6 @@ border-color: blue;
 }
 .IRMdivBtnFile> :nth-child(2){
     border-radius: 5px;
-/* margin-left: 10px; */
     background-color: rgb(39, 121, 214);
     color: white;
 border-color:  rgb(39, 121, 214);
@@ -160,8 +143,6 @@ font-size: 17px;
 border: none;
 padding: 0;
 }
-.IRMdivMsg{
-display: none;}
  @media (max-width: 800px) {
  .IRMdivBtnFile> :nth-child(1):hover,.IRMdivBtnFile> :nth-child(2):hover{
  background-color: rgb(39, 121, 214);
@@ -171,21 +152,21 @@ display: none;}
     background-color: rgb(39, 121, 214);
     border-color:rgb(39, 121, 214);   
 }
+.IRMspanRemovePhoto{
+font-weight: 600;    
+}
 }
 @media (max-width: 500px) {
 .IIEemptyImg{
 width: 28vw;
 height: 120px   
 }
-
 }
-
 @media (max-width: 410px) {
 .IRMlabelFile {padding: 4px 0 0 4px }
 .IIElabelFile{
 padding: 0 3px 0 2px;    
 }
-
 }
 @media (max-width: 310px) {
 .IRMlabelFile {
@@ -199,14 +180,11 @@ height: 14vh;
     max-width: 80vw;
 }
 }
-
 @media (max-height: 450px) {
 .IRMlabelFile{
 flex-direction: row;
 width: 100%; 
 padding: 0 0 0 10px;   
-/* width: 30vw; */
-/* width: 270px; */
 height: 240px;
 justify-content: space-around;
 box-sizing: border-box;
@@ -223,13 +201,10 @@ width: 12vw;
 .IIEemptyImg{
 height: 30vh;
 }
-
 }  
 @media (max-height: 330px) {
 .IRMspanDad>span { 
 width: 15vw;
 height: 35vh;
 }
-
-
 }    

@@ -11,8 +11,6 @@ display: flex;
 justify-content: center;
 align-items: center;
 color: gray;
-/* width: 150px;
-height: 150px; */
 }
 .IRMlabelSelectPhoto{
 background-color: rgb(39, 121, 214);
@@ -25,10 +23,6 @@ padding: 5px;
 .IRMspan2{
 display: flex;
 }
-/* .IRMdivBtnFoto>:nth-child(2):hover{
-background-color: red;
-} */
-
 .IRMbtnRemovefoto{
 background-color: rgb(39, 121, 214);
 border-radius: 5px;
@@ -36,7 +30,6 @@ color: white;
 border:rgb(39, 121, 214);
 padding: 8px 0px 8px 0px;
 font-size: 15px;
-/* margin-left: 10px; */
 cursor: pointer;
 display: flex;
 align-items: center;
@@ -45,11 +38,9 @@ justify-content: center;
 .IRMbtnRemovefoto:hover{
 background-color: rgb(170, 18, 18);
 }
-
 .IRMbtnRemovefoto>:nth-child(1){
 margin-right: 3px;
 }
-/* dasdsad */
 .IRMdivBtnFoto{
     display: flex;
     flex-direction: column-reverse;
@@ -73,11 +64,6 @@ border-radius: 4px;
     border: none;
     padding: 0;
 }
-/* .IIEdivImgSpan{
-    display: none;    
-} */
-
-
 @media (max-width: 800px) {
 .IRMbtnRemovefoto:hover{
  background-color: rgb(39, 121, 214);
@@ -89,19 +75,12 @@ border-radius: 4px;
 @media (max-width: 500px) {
 .IIEportraitImg{
 max-height: 23vh;
-
 }
 }
-
-
 @media (max-width: 410px) {
 .IIElandscapeImg {width: 41vw;}
 }
 @media (max-width: 310px) {
-/* .IRMdivBtnFoto {flex-direction: row;
-height: auto;
-padding: 0;
-} */
 .IRMbtnRemovefoto {
 margin-left: 4px;
 padding-left: 3px;
@@ -109,11 +88,6 @@ padding-left: 3px;
 .IIElandscapeImg{
 max-width: 100%;}
 }
-
-
-
-
-
 @media (max-height: 450px) {
 .IRMdivBtnFoto {
 flex-direction: column-reverse;
@@ -122,12 +96,9 @@ justify-content: space-around;
 width: 100%;
 }
 .IRMbtnRemovefoto {
-/* padding: 10px 0 10px 0; */
 height: 40px;
 font-size: 16px;
 margin: 0 0 5px 0;
-/* margin-left: 0; */
-/* margin: 0; */
 width: 100%;
 display: flex;
 justify-content: center;
@@ -152,7 +123,6 @@ max-height: 135px;
 .IRMlabelFile > :nth-child(1) {
     margin-bottom: 0;
 }
-
 }
 @media (max-width: 630px) and (max-height: 440px) {
     .IIElandscapeImg {
@@ -168,7 +138,4 @@ width: 100%;
     .IIEportraitImg {
     max-height: 40vh;
     }
-    
-    
     }  
-

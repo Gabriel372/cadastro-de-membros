@@ -23,21 +23,17 @@ const inputFileRef = useRef<HTMLInputElement>(null);
 
 useEffect(() => {
 if (MsgBtnWait && ImgUpload.filename !== null) {
-UploadImgMember(ImgUpload.filename,MemberToStorage.cpf)    
-}
+UploadImgMember(ImgUpload.filename,MemberToStorage.cpf) ;}
 else if(MsgBtnWait && ImgUpload.filename === null) { setInputHasValue(true)}
 else if(ImgUpload.show !== '' && ImgUpload.hasFormatImgToCheck){
 CheckFormatImgIsLandScape(ImgUpload.show).then((data)=>{
 data ? setMemberToStorage(prevState => ({...prevState,formatImg:'landscape'})) :
 setMemberToStorage(prevState => ({...prevState,formatImg:'portrait'})) ;
 setImgUpload(prevState => ({...prevState,formatIsLandscape:data,hasFormatImgToCheck:false}));
-})
-}
+}) }
 else if (ImgUpload.filename && ImgUpload.fileIsLoading) {
 setImgUpload(prevState => ({...prevState,fileIsLoading:false}));  
-}
-
-}, [MsgBtnWait,ImgUpload]) 
+} }, [MsgBtnWait,ImgUpload]) 
 
 async function UploadImgMember(img:any,cpf:number|string) {
     const storageRef = ref(storage, `fbimages/(${cpf})`);
@@ -46,15 +42,13 @@ async function UploadImgMember(img:any,cpf:number|string) {
     setMemberToStorage(prevState => ({...prevState,imagePersonal:`${url}`}));
     setInputHasValue(true)   ;
     ClearInputFile();
-    return url;
-}
+return url; }
 
 function ClearInputFile() {
  if (inputFileRef.current) {
  inputFileRef.current.value = '';
  }
  setImgUpload({show:'',filename:null,formatIsLandscape:undefined,hasFormatImgToCheck:false,fileIsLoading:false});
-//  setMemberToStorage(prevState => ({...prevState,formatImg:''})) ;
 }
 function RemoveImg() {
 setImgUpload({show:'',filename:null,formatIsLandscape:undefined,hasFormatImgToCheck:false,fileIsLoading:false}) ;
@@ -79,36 +73,20 @@ setImgUpload((prevState) => ({
 ...prevState,show:reader.result as string,filename:file,hasFormatImgToCheck:true}));
 }
 reader.readAsDataURL(file);
-}
-}}
-// function ChangeImg(event: React.ChangeEvent<HTMLInputElement>) {
-//     const file = event.target.files?.[0];
-//     if (file ) {
-//         const reader = new FileReader();
-//         reader.onload = () => {
-//     setImgUpload((prevState => ({...prevState,show:reader.result as string,filename:file,hasFormatImgToCheck:true})))
-//     }    
-//     reader.readAsDataURL(file);
-// }}
+} }}
+
 return <div>
 <input id='file-input' type="file" accept="image/*,.heic,.heif" className='IRMlinputFileHidden' onChange={(event)=>ChangeImg(event)} ref={inputFileRef}/>
-
 <div className='IRMlabelFile' >
-   
 {!ImgUpload.fileIsLoading &&
 <div className={`${ImgUpload.show  === '' ? 'IRMdivToTextSpan':''}`}>
 {ImgUpload.show !== '' ?
  <img src={ImgUpload.show} alt="Foto" className={`${ImgUpload.show !== '' && ImgUpload.formatIsLandscape ?'IRMlandscapeImg':'IRMportraitImg'}`}/> : 
 <span>Sem foto</span>}    
 </div>}
-
 {ImgUpload.fileIsLoading && <div className="IRMdivMsg"></div>}
-
 {ImgUpload.fileIsLoading && <p className="IRMmsgLoad">Carregando foto ...</p> }
-
-
 <div className="IRMdivBtnFile">
-
 <span>
 <label htmlFor='file-input' className="IRMlabelSpan2">
 <BsFilePersonFill className='IRMiconPhoto'/>
@@ -118,12 +96,11 @@ Selecionar foto
 
 <button onClick={RemoveImg}>
 <FaTrashAlt className='IRMiconTrash'/>
-<span>Remover foto</span>
+<span className="IRMspanRemovePhoto">Remover foto</span>
 </button>
 </div>
 
 </div>
-{/* <button onClick={()=> setImgUpload(prevState => ({...prevState,fileIsLoading:true}))}>teste</button> */}
     </div>
 }
 

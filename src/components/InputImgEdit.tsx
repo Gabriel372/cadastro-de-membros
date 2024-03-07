@@ -1,4 +1,3 @@
-
 import { BsFilePersonFill } from "react-icons/bs";
 import {IBoxImgMember,IEdtImg,IEditInputMember} from './Types'
 import {useState,useEffect,useContext  } from 'react'
@@ -9,15 +8,11 @@ import './InputImgEdit.css'
 import { FaTrashAlt } from "react-icons/fa";
 import {CheckFormatImgIsLandScape} from './FuncImgMember'
 import heic2any from 'heic2any';
-// import heic2jpeg from 'heic2any';
 
 function InputImgEdit({MemberEdit,setMemberEdit,setHasMemberToUpdt,MsgBtnWait}:IEditInputMember) {
 const [ImgEdit, setImgEdit] = useState<IEdtImg>({show:MemberEdit.imagePersonal,filename:null,formatImg:'',hasFormatImgToCheck:false,fileIsLoading:false});
-const { setBoxImgMember,BoxImgMember } = useContext(RegistContext) as IBoxImgMember
+const { setBoxImgMember } = useContext(RegistContext) as IBoxImgMember
 const [FormatImgMemberWasCheck, setFormatImgMemberWasCheck] = useState<boolean>(false)
-
-//SELECIONOU A IMG : QUARADO SOME E FICA MSG : CARREGANDO FOTO
-
 
 useEffect(() => {
     if (MsgBtnWait && ImgEdit.filename !== null ) {
@@ -52,13 +47,11 @@ const url = await getDownloadURL(snapshot.ref);
 setMemberEdit(prevState => ({...prevState,imagePersonal:`${url}`}));
 setBoxImgMember(prevState => [...prevState,`${url}`]);
 setHasMemberToUpdt(true) ;
-        return url;
-}
+return url;}
 
 function RemoveImg() {
 setImgEdit({show:'',filename:null,formatImg:'',hasFormatImgToCheck:false,fileIsLoading:false})
-setMemberEdit((MemberEdit => ({...MemberEdit,imagePersonal:''})))
-}
+setMemberEdit((MemberEdit => ({...MemberEdit,imagePersonal:''}))); }
 
 async function ChangeImg(event: React.ChangeEvent<HTMLInputElement>) {
 const file = event.target.files?.[0];
@@ -76,53 +69,6 @@ reader.onload = () => {
 setImgEdit(prevState => ({...prevState,show:reader.result as string,filename:file,hasFormatImgToCheck:true}));
 }
 reader.readAsDataURL(file) ;}}}
-
-//     const reader = new FileReader();
-//     reader.onload = async () => {
-//     let result = reader.result;
-//     if (file.type === 'image/heic') {
-//     const heicBlob = new Blob([new Uint8Array(result as ArrayBuffer)]);
-//     const jpegBlob:any = await heic2any({ blob: heicBlob, toType: "image/jpeg", quality: 0.8 });           
-//      result = URL.createObjectURL(jpegBlob);
-//     }
-//     setImgEdit((prevState => ({...prevState,show:reader.result as string,filename:file,hasFormatImgToCheck:true})))
-//     }   
-//     reader.readAsDataURL(file);
-//     }
-// }
-
-// async function ChangeImg(event: React.ChangeEvent<HTMLInputElement>) {
-// const file = event.target.files?.[0];
-// if (file ) {
-// const reader = new FileReader();
-// reader.onload = async () => {
-// let result = reader.result;
-// if (file.type === 'image/heic') {
-// const heicBlob = new Blob([new Uint8Array(result as ArrayBuffer)]);
-// const jpegBlob:any = await heic2any({ blob: heicBlob, toType: "image/jpeg", quality: 0.8 });           
-//  result = URL.createObjectURL(jpegBlob);
-// }
-// setImgEdit((prevState => ({...prevState,show:reader.result as string,filename:file,hasFormatImgToCheck:true})))
-// }   
-// reader.readAsDataURL(file);
-// }}
-
-
-// async function ChangeImg(event: React.ChangeEvent<HTMLInputElement>) {
-//     const file = event.target.files?.[0];
-//     if (file) {
-//         const reader = new FileReader();
-//         reader.onload = async () => {
-//             let result = reader.result;
-//             if (file.type === 'image/heic') {
-//                 const heicBlob = new Blob([new Uint8Array(result as ArrayBuffer)]);
-//                 const jpegBlob:any = await heic2jpeg({ blob: heicBlob, toType: "image/jpeg", quality: 0.8 });
-//                 result = URL.createObjectURL(jpegBlob);
-//             }
-//             setImgUpload((prevState => ({...prevState, show: result as string, filename: file, hasFormatImgToCheck: true})));
-//         }
-//         reader.readAsArrayBuffer(file);
-//     } }
 
     return <div>
 <input id='file-input' type="file" accept="image/*,.heic,.heif" className='IRMlinputFileHidden' onChange={(event)=>ChangeImg(event)}/>
@@ -151,7 +97,6 @@ className={`${ImgEdit.formatImg === 'landscape' ?'IIElandscapeImg':'IIEportraitI
 </button>
 </div>
 </div>
-{/* <button onClick={()=> console.log()}>TESTE</button> */}
     </div>
 }
 export default InputImgEdit

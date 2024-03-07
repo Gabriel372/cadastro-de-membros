@@ -74,39 +74,3 @@ export type IEditInputMember = {
     setHasMemberToUpdt:React.Dispatch<React.SetStateAction<boolean>>;  
 MsgBtnWait:boolean
 }
-
-
-
-
-
-    // export type IHasMember {
-    //     HasMemberToUpdt:boolean;
-    //     setHasMemberToUpdt:React.Dispatch<React.SetStateAction<boolean>> }
-
-    // export class IMember {
-    //     name:string ;
-    //     cpf:number | undefined;
-    //     cellphone:number | undefined;
-    //     address:string;
-    //     maritalStatus:string
-    //     imagePersonal:string | undefined;
-    //     id:string
-    //     constructor(name:string='',cpf:number,cellphone:number,address:string='',
-    //     maritalStatus:string='',imagePersonal:string=''){
-    //     this.name=name  
-    //     this.cpf=cpf
-    //     this.cellphone=cellphone
-    //     this.address=address
-    //     this.maritalStatus=maritalStatus
-    //     this.imagePersonal=imagePersonal
-    //     this.id=nanoid()
-    // }
-    //     }
-
-
-
-// export type IBoxTask = {
-// BoxTask:Array<ITask>;
-// setBoxTask:React.Dispatch<React.SetStateAction<Array<ITask>>>; 
-// }
-

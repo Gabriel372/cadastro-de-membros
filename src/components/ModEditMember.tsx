@@ -9,7 +9,6 @@ import {RegistContext } from './RegistContext'
 import { nanoid } from 'nanoid';
 import InputImgEdit from './InputImgEdit';
 import DelPrevImgMember from './DelPrevImgMember'
-// import {useEffect,useContext} from 'react'
 
 interface IModEditMember {
 ModalEditIsOpen:boolean;
@@ -34,7 +33,6 @@ async function UpdtMemberInFirebase() {
     try {const docRef:any =  MemberEdit
         const Source = doc(db, "MemberDB", docRef.id);
         await updateDoc(Source,docRef);
-// setBoxMember((prevBox) => ...prevBox, MemberEdit )
 UpdtBoxMember() 
       } catch (erro) {
         console.error('Erro ao atualizar o usuário: ', erro);
@@ -79,23 +77,13 @@ maritalStatus:'',imagePersonal:'',formatImg:'',dateOfBirth:'',nanoId: nanoid(),i
 <InputEditMember MemberEdit={MemberEdit} setMemberEdit={setMemberEdit} MsgBtnWait={MsgBtnWait} setMsgBtnWait={setMsgBtnWait}/>
 
 </div>
-
-
-
- 
-
-
  {MsgSuccess && <p className='MDEMmsgSuccess'>Editado com sucesso !</p> }
 <div>
-{/* <button className='MDMbtnYes' onClick={()=> deleteMemberInFirebase(MemberDel) }>sim</button> */}
 </div>
-
 </div>
-
-            </div>
+</div>
 }    
     </div>
         
 }
-
 export default ModEditMember

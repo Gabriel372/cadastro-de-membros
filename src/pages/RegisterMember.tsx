@@ -55,7 +55,6 @@ setInputHasValue={setInputHasValue} setMsgBtnWait={setMsgBtnWait} MsgBtnWait={Ms
 </div>
 
     </div>
-    {/* <button onClick={()=> console.log(MemberToStorage)  }>TESTE</button> */}
     </div> 
 }
 

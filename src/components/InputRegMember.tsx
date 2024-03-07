@@ -1,4 +1,3 @@
-// import '../pages/RegisterMember.css'
 import { IMember } from './Types';
 import './InputRegMember.css'
 import { useState,useContext } from 'react';
