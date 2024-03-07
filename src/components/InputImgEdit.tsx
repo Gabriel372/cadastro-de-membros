@@ -16,6 +16,9 @@ const [ImgEdit, setImgEdit] = useState<IEdtImg>({show:MemberEdit.imagePersonal,f
 const { setBoxImgMember,BoxImgMember } = useContext(RegistContext) as IBoxImgMember
 const [FormatImgMemberWasCheck, setFormatImgMemberWasCheck] = useState<boolean>(false)
 
+//SELECIONOU A IMG : QUARADO SOME E FICA MSG : CARREGANDO FOTO
+
+
 useEffect(() => {
     if (MsgBtnWait && ImgEdit.filename !== null ) {
 UploadImgMember(ImgEdit.filename,MemberEdit.cpf) ;
@@ -60,7 +63,7 @@ setMemberEdit((MemberEdit => ({...MemberEdit,imagePersonal:''})))
 async function ChangeImg(event: React.ChangeEvent<HTMLInputElement>) {
 const file = event.target.files?.[0];
 if (file ) {
-setImgEdit(prevState => ({...prevState,fileIsLoading:true}));    
+setImgEdit(prevState => ({...prevState,filename:null,fileIsLoading:true}));    
  if (file.type === 'image/heic') {
 heic2any({blob:file,toType:"image/jpeg",}).then((jpegBlob: any) => {
 const reader = new FileReader();
@@ -144,7 +147,8 @@ className={`${ImgEdit.formatImg === 'landscape' ?'IIElandscapeImg':'IIEportraitI
 </span>
 </label>
 <button className="IRMbtnRemovefoto" onClick={RemoveImg}><FaTrashAlt className="IRMiconTrash"/>
-Remover foto</button>
+<span>Remover foto</span>
+</button>
 </div>
 </div>
 {/* <button onClick={()=> console.log()}>TESTE</button> */}

@@ -63,7 +63,7 @@ setMemberToStorage(prevState => ({...prevState,formatImg:''}))  }
 function ChangeImg(event: React.ChangeEvent<HTMLInputElement>) {
 const file = event.target.files?.[0];
 if (file) {
- setImgUpload(prevState => ({...prevState,fileIsLoading:true}));  
+setImgUpload(prevState => ({...prevState,filename:null,fileIsLoading:true}));  
 if (file.type === 'image/heic') {
 heic2any({blob:file,toType:"image/jpeg",}).then((jpegBlob: any) => {
 const reader = new FileReader();
@@ -117,10 +117,13 @@ Selecionar foto
 </span>
 
 <button onClick={RemoveImg}>
-<FaTrashAlt className='IRMiconTrash'/>Remover foto</button>
+<FaTrashAlt className='IRMiconTrash'/>
+<span>Remover foto</span>
+</button>
 </div>
 
 </div>
+{/* <button onClick={()=> setImgUpload(prevState => ({...prevState,fileIsLoading:true}))}>teste</button> */}
     </div>
 }
 
