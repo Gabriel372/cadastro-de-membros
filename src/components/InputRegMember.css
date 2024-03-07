@@ -120,7 +120,14 @@ justify-content: center;
 width: 150px;
 height: 150px;    
 }
-
+.IRMmsgLoad{
+color: rgb(34, 99, 173);
+font-size: 17px;
+border: none;
+padding: 0;
+}
+.IRMdivMsg{
+display: none;}
  @media (max-width: 800px) {
  .IRMdivBtnFile> :nth-child(1):hover,.IRMdivBtnFile> :nth-child(2):hover{
  background-color: rgb(39, 121, 214);

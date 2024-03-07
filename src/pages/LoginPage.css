@@ -113,7 +113,7 @@ margin-top: 0;
 
 
 @media (max-width: 800px) {
-    .LogdivIconRelat > span{
+.LogdivIconRelat > span{
 font-size: 45px;
 top: -17px;
 padding: 4px 10px 0 10px;
@@ -122,6 +122,12 @@ padding: 4px 10px 0 10px;
 /* .LogContainer{
 height: 94vh; 
         }  */
+.LogBtnAcces{
+padding: 7px ;    
+} 
+.LogBtnRegist{
+padding: 5px 4px 5px 4px;    
+}       
 .LogBtnRegist:hover{
 background-color: rgb(0, 140, 255);   
 border-color: rgb(0, 140, 255);   

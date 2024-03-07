@@ -7,13 +7,7 @@ import { FaTrashAlt } from "react-icons/fa";
 import './InputRegMember.css'
 import {CheckFormatImgIsLandScape} from './FuncImgMember'
 import { IRegistImg } from "../components/Types"
-//import heic2jpeg from 'heic2any';
 import heic2any from 'heic2any';
-
-//import heic2jpeg from 'heic2jpeg';
-//import {heic-convert} from 'heic-convert';
-// import heic2jpeg from 'heic2jpeg'; 
-//import {convert} from 'heic-convert';
 
 interface IRegistMemb{
 MsgBtnWait:boolean
@@ -23,7 +17,8 @@ setInputHasValue:React.Dispatch<React.SetStateAction<boolean>>
 }
 
 function InputImgRegistMemb({MsgBtnWait,setMemberToStorage,MemberToStorage,setInputHasValue}:IRegistMemb) {
-const [ImgUpload, setImgUpload] = useState<IRegistImg>({show:'',filename:null,formatIsLandscape:undefined,hasFormatImgToCheck:false});
+const [ImgUpload, setImgUpload] = useState<IRegistImg>({show:'',
+filename:null,formatIsLandscape:undefined,hasFormatImgToCheck:false,fileIsLoading:false});
 const inputFileRef = useRef<HTMLInputElement>(null);
 
 useEffect(() => {
@@ -38,6 +33,10 @@ setMemberToStorage(prevState => ({...prevState,formatImg:'portrait'})) ;
 setImgUpload(prevState => ({...prevState,formatIsLandscape:data,hasFormatImgToCheck:false}));
 })
 }
+else if (ImgUpload.filename && ImgUpload.fileIsLoading) {
+setImgUpload(prevState => ({...prevState,fileIsLoading:false}));  
+}
+
 }, [MsgBtnWait,ImgUpload]) 
 
 async function UploadImgMember(img:any,cpf:number|string) {
@@ -54,11 +53,11 @@ function ClearInputFile() {
  if (inputFileRef.current) {
  inputFileRef.current.value = '';
  }
- setImgUpload({show:'',filename:null,formatIsLandscape:undefined,hasFormatImgToCheck:false});
+ setImgUpload({show:'',filename:null,formatIsLandscape:undefined,hasFormatImgToCheck:false,fileIsLoading:false});
 //  setMemberToStorage(prevState => ({...prevState,formatImg:''})) ;
 }
 function RemoveImg() {
-setImgUpload({show:'',filename:null,formatIsLandscape:undefined,hasFormatImgToCheck:false}) ;
+setImgUpload({show:'',filename:null,formatIsLandscape:undefined,hasFormatImgToCheck:false,fileIsLoading:false}) ;
 setMemberToStorage(prevState => ({...prevState,formatImg:''}))  }
 
 function ChangeImg(event: React.ChangeEvent<HTMLInputElement>) {
@@ -69,14 +68,14 @@ heic2any({blob:file,toType:"image/jpeg",}).then((jpegBlob: any) => {
 const reader = new FileReader();
 reader.onload = () => {
 setImgUpload((prevState) => ({
-...prevState,show:reader.result as string,filename:jpegBlob,hasFormatImgToCheck:true}));
+...prevState,show:reader.result as string,filename:jpegBlob,hasFormatImgToCheck:true,fileIsLoading:true}));
 }
 reader.readAsDataURL(jpegBlob);}).catch((e: Error) => console.error(e));
 } else {
  const reader = new FileReader();
 reader.onload = () => {
 setImgUpload((prevState) => ({
-...prevState,show:reader.result as string,filename:file,hasFormatImgToCheck:true}));
+...prevState,show:reader.result as string,filename:file,hasFormatImgToCheck:true,fileIsLoading:true}));
 }
 reader.readAsDataURL(file);
 }
@@ -95,13 +94,17 @@ return <div>
 
 <div className='IRMlabelFile' >
    
-
+{!ImgUpload.fileIsLoading &&
 <div className={`${ImgUpload.show  === '' ? 'IRMdivToTextSpan':''}`}>
-
 {ImgUpload.show !== '' ?
  <img src={ImgUpload.show} alt="Foto" className={`${ImgUpload.show !== '' && ImgUpload.formatIsLandscape ?'IRMlandscapeImg':'IRMportraitImg'}`}/> : 
 <span>Sem foto</span>}    
-</div>
+</div>}
+
+{ImgUpload.fileIsLoading && <div className="IRMdivMsg"></div>}
+
+{ImgUpload.fileIsLoading && <p className="IRMmsgLoad">Carregando foto ...</p> }
+
 
 <div className="IRMdivBtnFile">
 

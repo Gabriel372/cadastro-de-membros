@@ -55,6 +55,7 @@ export type IRegistImg = {
     filename:Blob | null
     formatIsLandscape:boolean | undefined
     hasFormatImgToCheck:boolean
+    fileIsLoading:boolean
 }
 export type ILoggedIn = {
 IsLoggedIn:boolean;
@@ -65,6 +66,7 @@ export type IEdtImg = {
 filename:Blob | null
 formatImg:string
 hasFormatImgToCheck:boolean
+fileIsLoading:boolean
 }
 export type IEditInputMember = {
     MemberEdit:IMember

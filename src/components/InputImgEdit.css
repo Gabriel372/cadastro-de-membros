@@ -67,6 +67,12 @@ border-radius: 4px;
 max-height: 200px;
 border-radius: 4px; 
 }
+.IIEmsgLoad{
+    color: rgb(34, 99, 173);
+    font-size: 17px;
+    border: none;
+    padding: 0;
+}
 @media (max-width: 800px) {
 .IRMbtnRemovefoto:hover{
  background-color: rgb(39, 121, 214);

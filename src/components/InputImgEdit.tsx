@@ -11,9 +11,8 @@ import {CheckFormatImgIsLandScape} from './FuncImgMember'
 import heic2any from 'heic2any';
 // import heic2jpeg from 'heic2any';
 
-
 function InputImgEdit({MemberEdit,setMemberEdit,setHasMemberToUpdt,MsgBtnWait}:IEditInputMember) {
-const [ImgEdit, setImgEdit] = useState<IEdtImg>({show:MemberEdit.imagePersonal,filename:null,formatImg:'',hasFormatImgToCheck:false});
+const [ImgEdit, setImgEdit] = useState<IEdtImg>({show:MemberEdit.imagePersonal,filename:null,formatImg:'',hasFormatImgToCheck:false,fileIsLoading:false});
 const { setBoxImgMember,BoxImgMember } = useContext(RegistContext) as IBoxImgMember
 const [FormatImgMemberWasCheck, setFormatImgMemberWasCheck] = useState<boolean>(false)
 
@@ -24,6 +23,8 @@ setHasMemberToUpdt(true) ; }
 else if (MsgBtnWait) { setHasMemberToUpdt(true) ; }
 else if (ImgEdit.hasFormatImgToCheck) { CheckNewFormatImg() ;}
 else if (!FormatImgMemberWasCheck) { GiveFormatImgMemberEditToImgEdit() ;}
+else if (ImgEdit.filename && ImgEdit.fileIsLoading) {
+setImgEdit(prevState => ({...prevState,fileIsLoading:false})); }
     },[MsgBtnWait,ImgEdit,MemberEdit])  
 
 function GiveFormatImgMemberEditToImgEdit() {
@@ -52,7 +53,7 @@ setHasMemberToUpdt(true) ;
 }
 
 function RemoveImg() {
-setImgEdit({show:'',filename:null,formatImg:'',hasFormatImgToCheck:false})
+setImgEdit({show:'',filename:null,formatImg:'',hasFormatImgToCheck:false,fileIsLoading:false})
 setMemberEdit((MemberEdit => ({...MemberEdit,imagePersonal:''})))
 }
 
@@ -63,12 +64,12 @@ if (file ) {
 heic2any({blob:file,toType:"image/jpeg",}).then((jpegBlob: any) => {
 const reader = new FileReader();
 reader.onload = () => {
-setImgEdit(prevState => ({...prevState,show:reader.result as string,filename:jpegBlob,hasFormatImgToCheck:true}));
+setImgEdit(prevState => ({...prevState,show:reader.result as string,filename:jpegBlob,hasFormatImgToCheck:true,fileIsLoading:true}));
  }        
  reader.readAsDataURL(jpegBlob);}).catch((e: Error) => console.error(e));
  }else {const reader = new FileReader();
 reader.onload = () => {
-setImgEdit(prevState => ({...prevState,show:reader.result as string,filename:file,hasFormatImgToCheck:true}));
+setImgEdit(prevState => ({...prevState,show:reader.result as string,filename:file,hasFormatImgToCheck:true,fileIsLoading:true}));
 }
 reader.readAsDataURL(file) ;}}}
 
@@ -123,10 +124,17 @@ reader.readAsDataURL(file) ;}}}
 <input id='file-input' type="file" accept="image/*,.heic,.heif" className='IRMlinputFileHidden' onChange={(event)=>ChangeImg(event)}/>
 <div className='IRMlabelFile'>
 <span className="IRMspanDad">
+
+{!ImgEdit.fileIsLoading && <>
 {ImgEdit.show !== '' ? <img src={ImgEdit.show} alt="Foto" 
 className={`${ImgEdit.formatImg === 'landscape' ?'IIElandscapeImg':'IIEportraitImg'}`}/>
-:<span>Sem foto</span> } 
+:<span>Sem foto</span> } </>}
+
+{ImgEdit.fileIsLoading && <div></div>}
+
+{ImgEdit.fileIsLoading && <p className="IIEmsgLoad">Carregando foto ...</p> }
 </span>
+
 <div className="IRMdivBtnFoto">
 <label htmlFor='file-input' className="IRMlabelSelectPhoto">
 <span className='IRMspan2'>
