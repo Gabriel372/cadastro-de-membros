@@ -75,7 +75,6 @@ setMsg={setMsg} Msg={Msg} />
 {Msg.Success && <p className='RADMmsgSuccess'>Cadastrado com sucesso !</p> }
 </div>
 </div>
-{/* <button onClick={()=>console.log(BoxAdm)}>TESTE</button> */}
     </div>
 }
 

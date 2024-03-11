@@ -72,8 +72,6 @@ MemberDel={MemberDel} setMemberDel={setMemberDel} />
 {ModalEditIsOpen && <ModEditMember  ModalEditIsOpen={ModalEditIsOpen} setModalEditIsOpen={setModalEditIsOpen}
 MemberEdit={MemberEdit} setMemberEdit={setMemberEdit} />}
 
-{/* <button onClick={()=> console.log(BoxMember)  }>TESTE</button> */}
-
 </div>
 
 }

@@ -24,7 +24,6 @@ const regex = /\((\d+)\)/;
 const imgUrl =  Box.find((img)=> {
     const cpfWhitoutParenthes = img.match(regex);
     if (cpfWhitoutParenthes && cpfWhitoutParenthes[1] === cpf ) {
-      //  console.log(cpfWhitoutParenthes)
 return true
       } 
       else {

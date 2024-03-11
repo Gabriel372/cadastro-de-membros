@@ -2,7 +2,6 @@ import { IMember,IBoxImgMember } from "./Types"
 import { useContext,useEffect,useState } from 'react';
 import { ref,deleteObject,getStorage } from 'firebase/storage';
 import {RegistContext } from './RegistContext'
-import InputImgRegistMemb from "./InputImgRegistMemb";
 
 interface IDelPrevImg {
     MemberEdit:IMember
@@ -17,9 +16,6 @@ const { BoxImgMember,setBoxImgMember } = useContext(RegistContext) as IBoxImgMem
 const CpfIsNew = PrevMembData?.cpf !== MemberEdit.cpf
 const ImgIsNew = PrevMembData?.imagePersonal !== MemberEdit.imagePersonal ;
 const ImgActualEmptyEimgPrevHas = MemberEdit.imagePersonal === '' && PrevMembData?.imagePersonal !== ''
-//IMG ATUAL ESTA VAZIA E HAVIA IMAGEM ANTERIOR... DELETE 
-
-//NAO TINHA IMG > INSERI IMAGEM E MUDEI O CPF
 
 useEffect(() => {
     if (HasMemberToUpdt && ImgIsNew ) {
@@ -33,11 +29,6 @@ if (CpfIsNew && ImgIsNew && PrevMembData?.imagePersonal !== '' || ImgActualEmpty
 DeleteImg();
 }    
 }
-//CPF E 
-
-
-
-
 
 function DeleteImg() {
         const storage = getStorage();
@@ -51,7 +42,6 @@ function DeleteImg() {
 
 
 return <div>
- {/* <button className='MDMbtnYes' onClick={()=> console.log(PrevMembData?.cpf) }>TESTE</button> */}
 </div>    
 }
 

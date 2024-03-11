@@ -1,6 +1,5 @@
 .MDMContainer{
     background: rgba(0, 0, 0, 0.5);
-    /* position: absolute; */
     position: fixed;
     width: 100% ;
     height: 100%;
@@ -8,8 +7,6 @@
     display: flex;
     justify-content: center;
     align-items: center ;
-    /* overflow-y:  */
-    /* z-index: 1; */
 }
 .MDMsquare{
     border: 1px solid gray;   

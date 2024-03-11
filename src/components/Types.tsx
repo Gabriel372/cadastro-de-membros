@@ -25,7 +25,6 @@ export class IAdm {
             public imagePersonal: string = '',
             public formatImg:string = '',
             public dateOfBirth:string='',
-            // public dateOfBaptism:string='',
             public nanoId: string = nanoid(),
             public id: string = '',
         ) {}

@@ -48,7 +48,6 @@ setMsgAlert(true) ; } }
 
 return <>
 <form onSubmit={ClickEdit} className='IEMform'> 
-{/* <input type="file" className={style.inputUpload}/> */}
 <label>Nome completo: <input autoFocus type="text" placeholder='Nome completo' onChange={ChangeInput} 
 value={MemberEdit?.name} name="name"/>    
 </label>

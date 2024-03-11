@@ -58,13 +58,8 @@ background-color: rgb(186, 233, 186);
 @media (max-width: 310px) {
 .MDEMsquare {
 padding: 4px 4px 4px 4px;
-
 }
-
-    
 }
-
-
      @media (max-height: 450px) {
 .MDEMinputTextEImg{
 display: flex;

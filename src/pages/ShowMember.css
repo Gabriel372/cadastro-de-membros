@@ -107,7 +107,7 @@ border-radius: 4px;
 grid-template-columns: auto auto;
 }
 }
-@media (max-width: 950px) {
+@media (max-width: 800px) {
     .SMul{
     grid-template-columns: auto ;
     }

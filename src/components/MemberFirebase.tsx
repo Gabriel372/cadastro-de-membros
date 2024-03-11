@@ -1,5 +1,4 @@
 import { useContext } from 'react';
-// import { IMember } from './Types';
 import {RegistContext } from './RegistContext'
 import {IBoxMember} from './Types'
 import { collection,getDocs } from "firebase/firestore"; 

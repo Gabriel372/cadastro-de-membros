@@ -3,8 +3,6 @@ import {IBoxImgMember, IMember} from './Types'
 import { collection, getDocs } from "firebase/firestore";
 import {db} from './firebase';
 import { IAdm } from './Types';
-import { ref, getDownloadURL,listAll } from "firebase/storage";
-import { storage } from "./firebase";
 
 interface  Props {
   children:ReactNode
@@ -20,7 +18,6 @@ export function RegistContextProvider({children}:Props) {
 
   useEffect( () => { 
     GetAdmToBox() ;
-    // DownloadImgMember() ;
   },[])
 
   async function GetAdmToBox() {
@@ -34,16 +31,7 @@ export function RegistContextProvider({children}:Props) {
     const data:any = querySnapshot.docs.map((doc) => ({...doc.data(),id:doc.id}) );
   setBoxMember(data)
   }
-//  async  function DownloadImgMember() {
-// try { const storageRef = ref(storage,`fbimages/`);
-// const imageList = await listAll(storageRef);
-// const urlPromises = imageList.items.map(item => getDownloadURL(item));
-// const urls:any = await Promise.all(urlPromises);
-// setBoxImgMember(urls) 
-// GetMemberToBox()
-// }
-// catch (error) {console.error('Erro geral ao obter URLs das imagens:', error);
-// }  }
+
   return (
     <RegistContext.Provider value={{ BoxMember,BoxAdm,IsLoggedIn,BoxImgMember,setBoxImgMember,setBoxMember,setBoxAdm,setIsLoggedIn}}>
       {children}

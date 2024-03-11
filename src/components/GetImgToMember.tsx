@@ -1,12 +1,6 @@
 import {IBoxImgMember, IBoxMember, IMember} from './Types'
 import { useEffect,useContext } from 'react';
 import {RegistContext } from '../components/RegistContext'
-
-// interface IHasMember {
-//     HasMemberToUpdt:boolean;
-//     setHasMemberToUpdt:React.Dispatch<React.SetStateAction<boolean>> }
-
-// function GetImgToMember({HasMemberToUpdt,setHasMemberToUpdt}:IHasMember) {
  
 function GetImgToMember() {
     const { BoxImgMember } = useContext(RegistContext) as IBoxImgMember

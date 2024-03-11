@@ -54,8 +54,6 @@ else{setMsgBtnWait(false); setModalDelIsOpen(false) }
 {ModalDelIsOpen && 
         <div  className="MDMContainer" onClick={()=> {setModalDelIsOpen(false) }}>
 <div className='MDMsquare' onClick={(e)=> e.stopPropagation()}>
-    {/* <p><b>Nome:</b> {MemberDel?.name}</p>
-    <p><b>CPF:</b> {MemberDel?.cpf}</p> */}
     <h4>Deseja deletar esse membro ?</h4>
 
 <div >

@@ -3,17 +3,9 @@ import ClipBoardImg from './images/ClipBoardImg.png'
 import { Link } from 'react-router-dom';
 import { useState,useEffect,useContext } from 'react';
 import {RegistContext } from './RegistContext'
-import { ILoggedIn,MyLinkProps } from "./Types";
+import { ILoggedIn } from "./Types";
 import MenuMobile from './MenuMobile'
 import { useNavigate } from 'react-router-dom';
-// import { Link, animateScroll as scroll } from "react-scroll";
-// import MyLinkProps from '..'
-
-// interface MyLinkProps {
-//   to: string;
-//   smooth: boolean;
-//   duration: number;
-// }
 
 function Header() {
 const [AdmLoged,setAdmLoged] = useState<string | null | {}>(null);
@@ -58,7 +50,6 @@ setIsLoggedIn(false);
 {IsLoggedIn && <MenuMobile/> }
 </div>
 
-{/* <button onClick={()=>{ActualPage && navigate(ActualPage.replace(/"/g, '').replace(/\/\//g, '/')) }}>TESTE</button> */}
     </header>
 }
 

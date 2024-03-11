@@ -52,7 +52,6 @@ setMsg({LoadBtn:false,EmailOrPasswrdWrong:false,FillTheFields:false}) } }
 </span>
 
 <div className='LogSquare'>
-{/* <h3>Bem vindo!</h3> */}
 <form onSubmit={ClickLog} onClick={DisableMsg}>
 <input className='LogInput' autoFocus type="email" name='email'
 placeholder='Digite seu email' onChange={ChangeInput} value={AdmLog.email}/>
@@ -69,9 +68,6 @@ onChange={ChangeInput} value={AdmLog.password} name='password'/>
 <p className='LogP'>ou</p>
 
 <Link className='LogBtnRegist' to='/RegisterAdm'>Cadastre-se</Link>
-{/* <button className='LogBtnRegist'>
-<Link className='LogBtnRegist' to='/RegisterAdm'>Cadastre-se</Link>
-</button> */}
 </div>
 
 </div>

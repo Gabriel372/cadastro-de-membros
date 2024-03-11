@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    /* padding: 0 10px 10px 10px; */
     box-sizing: border-box;
     text-align: left;
 }
@@ -49,10 +48,6 @@ align-self: center;
 cursor: pointer;
 margin-bottom: 5px;
 padding: 3px 0 3px 0;
-
-
-
-/* margin-bottom: 18px; */
 }
 .IEMmsgAlert{
     padding: 2px;
@@ -73,13 +68,6 @@ background-color: rgb(39, 121, 214);
 border: 1px solid rgb(39, 121, 214);
 }
 }
- 
-/* @media (min-width: 630px) {
-        .IEMform>label>input {
-        width: 26vw;
-         }  
-        }    */
-
 
 @media (max-width: 450px) {
     .IEMform>label>input{
@@ -110,13 +98,7 @@ width: 60vw;
     .IEMbtnUpdt {
         margin-top: 0; 
         }
-    
-    
-    
     }   
-
-
-
 @media (max-width: 630px) and (max-height: 440px) {
     .IEMform>label>input {
    max-width: 26vw;
@@ -133,12 +115,7 @@ max-height: 10vh;}
 .IEMform {
 max-height: 230px;
 }
-
-
 }  
-
-
-
 @media (max-width: 400px) {
     .IEMform>label>input{
 width: 52vw;        
@@ -155,35 +132,3 @@ width: 37vw;
 }
 
 }
-
-
-/* @media (max-width: 390px) {
-    .IEMform>label>input{
-width: 61%;
-}
-}
-@media (max-width: 360px) {
-    .IEMform>label>input{
-width: 55%;
-}
-}
-@media (max-width: 330px) {
-    .IEMform>label>input{
-width: 48%;
-}
-} */
-
-
-/* @media (max-width: 375px) {
-    .IEMform>label>input{
-width: 55vw;
-}
-} */
-
-
- 
-        
-
-
-
-           

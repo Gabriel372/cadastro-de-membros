@@ -2,7 +2,7 @@ import { IAdm } from "../components/Types";
 import { IMsgAdm } from "../pages/RegisterAdm"
 import {RegistContext } from '../components/RegistContext'
 import {IBoxAdm} from '../components/Types'
-import { useState,useContext,useEffect } from 'react';
+import { useContext } from 'react';
 import '../pages/RegisterAdm.css'
 
 interface IAdmToStorage {
